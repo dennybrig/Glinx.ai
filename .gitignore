@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+build/
+release/
+node_modules/
+.env
+.env.*
+!.env.example
+scan*.json
+glinx-config.json
+*.sqlite*
+.DS_Store

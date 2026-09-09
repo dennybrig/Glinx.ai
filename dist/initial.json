@@ -1,0 +1,338 @@
+{
+  "schema_version": "1.0",
+  "scan_id": "demo-alder-forge-v1",
+  "generated_at": "2026-09-09T09:42:00Z",
+  "mode": "demo",
+  "company": "Alder Forge",
+  "agent_version": "0.1.0",
+  "scope": "Fictional manufacturing company; all evidence is sample data",
+  "systems": [
+    {
+      "id": "epicor",
+      "name": "Epicor Kinetic",
+      "category": "ERP",
+      "owner": "Operations",
+      "status": "observed",
+      "confidence": 90,
+      "evidence": [
+        {
+          "id": "demo-endpoint-epicor",
+          "source": "endpoint",
+          "summary": "Sample endpoint inventory contains an Epicor Kinetic client. This is an installation record; active use has not been independently checked.",
+          "observed_at": "2026-09-09T09:42:00Z",
+          "locator": "SAMPLE \u00b7 epicor",
+          "status": "observed",
+          "confidence": 90
+        },
+        {
+          "id": "demo-inventory-epicor-owner",
+          "source": "inventory",
+          "summary": "Sample owner inventory identifies Epicor as the production planning system. Owner-reported context; not independently verified.",
+          "observed_at": "2026-09-09T09:42:00Z",
+          "locator": "SAMPLE \u00b7 epicor-owner",
+          "status": "reported",
+          "confidence": 75
+        }
+      ],
+      "attributes": {}
+    },
+    {
+      "id": "m365",
+      "name": "Microsoft 365",
+      "category": "Email",
+      "owner": "IT",
+      "status": "inferred",
+      "confidence": 60,
+      "evidence": [
+        {
+          "id": "demo-dns-m365",
+          "source": "dns",
+          "summary": "Sample MX record points to alderforge-example.mail.protection.outlook.com. This suggests Microsoft mail routing; it does not prove active mailboxes.",
+          "observed_at": "2026-09-09T09:42:00Z",
+          "locator": "SAMPLE \u00b7 m365",
+          "status": "inferred",
+          "confidence": 60
+        }
+      ],
+      "attributes": {}
+    },
+    {
+      "id": "salesforce",
+      "name": "Salesforce",
+      "category": "CRM",
+      "owner": "Sales",
+      "status": "observed",
+      "confidence": 90,
+      "evidence": [
+        {
+          "id": "demo-m365-salesforce",
+          "source": "m365",
+          "summary": "Sample Microsoft Entra enterprise application registration for Salesforce. Registration does not establish active use or a configured SSO connection.",
+          "observed_at": "2026-09-09T09:42:00Z",
+          "locator": "SAMPLE \u00b7 salesforce",
+          "status": "observed",
+          "confidence": 90
+        }
+      ],
+      "attributes": {}
+    },
+    {
+      "id": "adp",
+      "name": "ADP Workforce Now",
+      "category": "People",
+      "owner": "People",
+      "status": "reported",
+      "confidence": 75,
+      "evidence": [
+        {
+          "id": "demo-inventory-adp",
+          "source": "inventory",
+          "summary": "Sample owner-provided inventory lists ADP Workforce Now for payroll and HR.",
+          "observed_at": "2026-09-09T09:42:00Z",
+          "locator": "SAMPLE \u00b7 adp",
+          "status": "reported",
+          "confidence": 75
+        }
+      ],
+      "attributes": {}
+    },
+    {
+      "id": "quickbooks",
+      "name": "QuickBooks",
+      "category": "Finance",
+      "owner": "Finance",
+      "status": "observed",
+      "confidence": 90,
+      "evidence": [
+        {
+          "id": "demo-endpoint-quickbooks",
+          "source": "endpoint",
+          "summary": "Sample installation inventory includes QuickBooks. Confirm its business purpose and whether it overlaps with ERP finance modules.",
+          "observed_at": "2026-09-09T09:42:00Z",
+          "locator": "SAMPLE \u00b7 quickbooks",
+          "status": "observed",
+          "confidence": 90
+        }
+      ],
+      "attributes": {}
+    },
+    {
+      "id": "teams",
+      "name": "Microsoft Teams",
+      "category": "Collaboration",
+      "owner": "IT",
+      "status": "observed",
+      "confidence": 90,
+      "evidence": [
+        {
+          "id": "demo-endpoint-teams",
+          "source": "endpoint",
+          "summary": "Sample endpoint installation record for Microsoft Teams. No messages, meetings, or user accounts were read.",
+          "observed_at": "2026-09-09T09:42:00Z",
+          "locator": "SAMPLE \u00b7 teams",
+          "status": "observed",
+          "confidence": 90
+        }
+      ],
+      "attributes": {}
+    },
+    {
+      "id": "sharepoint",
+      "name": "SharePoint",
+      "category": "Collaboration",
+      "owner": "IT",
+      "status": "observed",
+      "confidence": 90,
+      "evidence": [
+        {
+          "id": "demo-m365-sharepoint",
+          "source": "m365",
+          "summary": "Sample enterprise application registration for SharePoint. No site content, documents, or permissions were collected.",
+          "observed_at": "2026-09-09T09:42:00Z",
+          "locator": "SAMPLE \u00b7 sharepoint",
+          "status": "observed",
+          "confidence": 90
+        }
+      ],
+      "attributes": {}
+    },
+    {
+      "id": "powerbi",
+      "name": "Power BI",
+      "category": "Data",
+      "owner": "Finance",
+      "status": "observed",
+      "confidence": 90,
+      "evidence": [
+        {
+          "id": "demo-endpoint-powerbi",
+          "source": "endpoint",
+          "summary": "Sample endpoint installation record for Power BI Desktop. No reports or datasets were read.",
+          "observed_at": "2026-09-09T09:42:00Z",
+          "locator": "SAMPLE \u00b7 powerbi",
+          "status": "observed",
+          "confidence": 90
+        },
+        {
+          "id": "demo-inventory-powerbi-owner",
+          "source": "inventory",
+          "summary": "Sample owner inventory describes a monthly CSV transfer from Epicor to Power BI. No live data flow was measured.",
+          "observed_at": "2026-09-09T09:42:00Z",
+          "locator": "SAMPLE \u00b7 powerbi-owner",
+          "status": "reported",
+          "confidence": 75
+        }
+      ],
+      "attributes": {}
+    },
+    {
+      "id": "sql",
+      "name": "Microsoft SQL Server",
+      "category": "Data",
+      "owner": "IT",
+      "status": "observed",
+      "confidence": 90,
+      "evidence": [
+        {
+          "id": "demo-endpoint-sql",
+          "source": "endpoint",
+          "summary": "Sample installation record includes Microsoft SQL Server. Databases, tables, credentials, and business records were not examined.",
+          "observed_at": "2026-09-09T09:42:00Z",
+          "locator": "SAMPLE \u00b7 sql",
+          "status": "observed",
+          "confidence": 90
+        }
+      ],
+      "attributes": {}
+    },
+    {
+      "id": "dropbox",
+      "name": "Dropbox",
+      "category": "Collaboration",
+      "owner": "",
+      "status": "observed",
+      "confidence": 90,
+      "evidence": [
+        {
+          "id": "demo-endpoint-dropbox",
+          "source": "endpoint",
+          "summary": "Sample endpoint inventory contains Dropbox. No owner was supplied; an installation alone does not establish unauthorized use.",
+          "observed_at": "2026-09-09T09:42:00Z",
+          "locator": "SAMPLE \u00b7 dropbox",
+          "status": "observed",
+          "confidence": 90
+        }
+      ],
+      "attributes": {}
+    },
+    {
+      "id": "odoo",
+      "name": "Odoo",
+      "category": "ERP",
+      "owner": "",
+      "status": "reported",
+      "confidence": 75,
+      "evidence": [
+        {
+          "id": "demo-inventory-odoo",
+          "source": "inventory",
+          "summary": "Sample owner inventory lists an Odoo pilot with no assigned owner. Confirm whether it is active and what process it supports.",
+          "observed_at": "2026-09-09T09:42:00Z",
+          "locator": "SAMPLE \u00b7 odoo",
+          "status": "reported",
+          "confidence": 75
+        }
+      ],
+      "attributes": {}
+    },
+    {
+      "id": "maintenance",
+      "name": "Maintenance Tracker",
+      "category": "Unclassified",
+      "owner": "",
+      "status": "reported",
+      "confidence": 75,
+      "evidence": [
+        {
+          "id": "demo-inventory-maintenance",
+          "source": "inventory",
+          "summary": "Sample inventory lists a local maintenance tracker with no business owner or system category.",
+          "observed_at": "2026-09-09T09:42:00Z",
+          "locator": "SAMPLE \u00b7 maintenance",
+          "status": "reported",
+          "confidence": 75
+        }
+      ],
+      "attributes": {}
+    }
+  ],
+  "relationships": [
+    {
+      "id": "r-erp-db",
+      "source": "epicor",
+      "target": "sql",
+      "label": "Production database",
+      "status": "reported",
+      "evidence": "SAMPLE \u00b7 Operations owner reports that Epicor uses this SQL Server. The agent has not connected to either application to verify the relationship."
+    },
+    {
+      "id": "r-erp-bi",
+      "source": "epicor",
+      "target": "powerbi",
+      "label": "Monthly CSV transfer",
+      "status": "reported",
+      "evidence": "SAMPLE \u00b7 Finance reports exporting an Epicor CSV monthly into Power BI. The transfer frequency and mechanism remain owner-reported."
+    },
+    {
+      "id": "r-hr-fin",
+      "source": "adp",
+      "target": "quickbooks",
+      "label": "Payroll journal export",
+      "status": "reported",
+      "evidence": "SAMPLE \u00b7 Finance reports importing payroll journal exports into QuickBooks. No payroll data or integration configuration was accessed."
+    }
+  ],
+  "collectors": [
+    {
+      "id": "endpoint",
+      "name": "Installed applications",
+      "status": "complete",
+      "count": 6,
+      "detail": "SAMPLE \u00b7 Application names from one fictional Windows workstation. Other company devices were not examined."
+    },
+    {
+      "id": "dns",
+      "name": "Mail domain",
+      "status": "complete",
+      "count": 1,
+      "detail": "SAMPLE \u00b7 MX records suggest Microsoft mail routing. Email contents were not accessed."
+    },
+    {
+      "id": "m365",
+      "name": "Microsoft 365 applications",
+      "status": "complete",
+      "count": 2,
+      "detail": "SAMPLE \u00b7 Two enterprise application registrations. Registration is not proof of active use or SSO configuration."
+    },
+    {
+      "id": "inventory",
+      "name": "Owner-provided inventory",
+      "status": "complete",
+      "count": 5,
+      "detail": "SAMPLE \u00b7 Five system statements and three integrations reported by company owners. None were independently verified."
+    },
+    {
+      "id": "endpoints",
+      "name": "Approved ERP web endpoints",
+      "status": "not_configured",
+      "count": 0,
+      "detail": "SAMPLE \u00b7 Direct ERP endpoint inspection has not been enabled. ERP findings come from endpoint and owner inventory evidence."
+    }
+  ],
+  "limitations": [
+    "All company names, evidence, owners, and integrations in this report are fictional demo data.",
+    "The map covers one sample endpoint and selected sample sources. Total company coverage is unknown.",
+    "Detection scores are rule-based signal strengths, not calibrated probabilities.",
+    "Integration links are owner-reported; no live data flow was measured."
+  ]
+}

@@ -34,6 +34,12 @@ glinx --version
 
 The wheel contains the local dashboard. Python packaging may download build tools during installation; the agent itself has no third-party runtime dependencies. For an offline demo, run directly from the checkout as shown above.
 
+The downloadable source bundle also includes the built wheel in `release/`. To install that package without fetching dependencies:
+
+```bash
+python -m pip install --no-index release/glinx_discovery-0.1.0-py3-none-any.whl
+```
+
 ## Run a real scan
 
 ```bash

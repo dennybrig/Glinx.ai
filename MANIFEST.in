@@ -1,0 +1,3 @@
+recursive-include dist *.html *.css *.js *.json *.svg
+recursive-include examples *.csv *.json
+include README.md

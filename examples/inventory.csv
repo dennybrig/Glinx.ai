@@ -1,0 +1,8 @@
+name,category,owner,connects_to,relationship
+Epicor Kinetic,ERP,Operations,Microsoft SQL Server,Reported production database
+Microsoft SQL Server,Data,IT,,
+Microsoft 365,Email,IT,,
+Salesforce,CRM,Sales,,
+ADP Workforce Now,People,People,,
+Power BI,Data,Finance,Epicor Kinetic,Reported monthly CSV transfer
+Maintenance Tracker,Unclassified,Maintenance,,
