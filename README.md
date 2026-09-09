@@ -91,6 +91,7 @@ The frontend is authored directly in `dist/`; it does not need a JavaScript depe
 
 ## Demo preparation
 
+- [Investor presentation: PowerPoint, PDF, and presenter notes](docs/investor/README.md)
 - [Five-minute investor walkthrough](docs/INVESTOR-DEMO.md)
 - [Three-day preparation plan](docs/THREE-DAY-PLAN.md)
 - [Validation record and limitations](docs/VALIDATION.md)
