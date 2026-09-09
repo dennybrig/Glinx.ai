@@ -32,3 +32,7 @@ Prepared in September 2026 against software commit [`8e49df9`](https://github.co
 - The deck does not claim customer traction, measured financial results, whole-company discovery from one computer, or autonomous business decisions.
 
 All 15 finalized slides were rendered and visually reviewed. Structural checks confirmed 15 slides, editable text and native tables, and consistent Arial fonts. The PDF contains the reviewed slide renders and two navigation links on slide 13.
+
+## Full Glinx AI platform pitch
+
+[Open the new 25-slide full investor pitch](full-pitch/README.md), covering company self-awareness and recursive self-improvement across the complete platform.
