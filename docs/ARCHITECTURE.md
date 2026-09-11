@@ -48,7 +48,7 @@ The agent is a manually invoked process, not a managed endpoint service. Linux i
 
 ## Subsequent architecture
 
-The current stage-two proposal is documented in [Stage two: a persistent company model](STAGE-2-ARCHITECTURE.md). Its small implementation sequence is local company memory, native source identities, one ERP connector, and one operational view. The proposal includes acceptance criteria for the first coding chunk; these capabilities are not implemented by the documentation checkpoint. Broader source coverage remains follow-on work.
+The current stage-two proposal is documented in [Stage two: a persistent company model](STAGE-2-ARCHITECTURE.md). Its small implementation sequence is local company memory, native source identities, one ERP connector, and one operational view. The proposal includes acceptance criteria for the first coding chunk; the original checkpoint specified future work. Stage 2A is now implemented; see the [company memory demo and command guide](STAGE-2-DEMO.md). Broader source coverage remains follow-on work.
 
 The next pilot should add one high-value native ERP connector and one broader identity/MDM source, stable tenant/resource identities, authenticated enrollment, protected credential storage, incremental scans, deletion/change reconciliation, and audit history. Then introduce native SQL/document/graph evidence routing and permission-aware retrieval. PostgreSQL/Qdrant/MinIO and local inference can support that later evidence and memory layer; they are not needed to run this sensing demo.
 

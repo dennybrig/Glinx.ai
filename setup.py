@@ -11,7 +11,7 @@ class BuildWithDashboard(build_py):
         root = Path(__file__).parent
         target = Path(self.build_lib) / "glinx_discovery" / "web"
         target.mkdir(parents=True, exist_ok=True)
-        for name in ("index.html", "styles.css", "app.js", "model.js", "demo.json", "favicon.svg"):
+        for name in ("index.html", "styles.css", "app.js", "model.js", "demo.json", "favicon.svg", "memory.html", "memory.css", "memory.js", "memory-model.js", "memory-demo.json"):
             copy2(root / "dist" / name, target / name)
 
 

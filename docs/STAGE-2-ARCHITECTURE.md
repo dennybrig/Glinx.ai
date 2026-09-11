@@ -1,6 +1,6 @@
 # Glinx stage two: a persistent company model
 
-Status: proposed architecture and implementation sequence. This checkpoint changes documentation only; the capabilities below are not yet implemented.
+Status: architecture and implementation sequence. Stage 2A is now implemented in the [company memory increment](STAGE-2-DEMO.md); the remaining capabilities below are the roadmap.
 
 Baseline: [main at c424470](https://github.com/dennybrig/Glinx.ai/tree/c4244704c3ff4fb8ef686b8022b402bae0329d1b), inspected September 10, 2026.
 
@@ -95,7 +95,7 @@ Retain observation revisions during the configured retention period and rebuild 
 
 Implement only the company/scope record, persisted report imports, and a comparison command. A small owner-supplied company profile starts the charter; executable goal optimization comes later.
 
-Proposed commands — specification only; these commands do not exist yet:
+Commands for the implemented first slice:
 
 ```text
 glinx company init --name "Alder Forge" --db alder.db
@@ -114,7 +114,7 @@ Compatibility rules:
 - A missing record means **not seen in this scan**. A failed/disabled source means **visibility unavailable**. Neither means a system was deleted. Only an authoritative deletion event or an explicit owner resolution can establish removal.
 - Keep `demo` and `live` histories separate; reject mixed comparisons. Retain conflicting claims and explicit limitations.
 
-Acceptance checks for the implementation PR:
+Acceptance criteria for the implementation PR:
 
 | Scenario | Required result |
 | --- | --- |
@@ -151,4 +151,5 @@ Outcome observations return through the evidence plane. The learning component c
 
 ## Checkpoint validation
 
-Reviewed against the repository's discovery code, report validator, connector instructions, packaging configuration, and hosted static configuration. This PR contains documentation only. No runtime tests or live ERP validation were performed for this checkpoint. The acceptance checks above specify future implementation work.
+Reviewed against the repository's discovery code, report validator, connector instructions, packaging configuration, and hosted static configuration. The original architecture checkpoint contained documentation only. Stage 2A implementation and validation are documented in [the demo guide](STAGE-2-DEMO.md). No live ERP validation has been performed.
+

@@ -87,6 +87,8 @@ def parser():
     root = argparse.ArgumentParser(description="Glinx discovery: a local, evidence-backed inventory of company systems.")
     root.add_argument("--version", action="version", version=__version__)
     sub = root.add_subparsers(dest="command", required=True)
+    from glinx_company.cli import register_commands
+    register_commands(sub)
     init = sub.add_parser("init", help="Write a config with all collectors disabled")
     init.add_argument("--output", default="glinx-config.json")
     scan = sub.add_parser("scan", help="Run only explicitly enabled collectors")
@@ -113,6 +115,9 @@ def parser():
 def main(argv=None):
     args = parser().parse_args(argv)
     try:
+        if args.command == "company":
+            from glinx_company.cli import main as company_main
+            return company_main(args)
         if args.command == "init":
             if Path(args.output).exists():
                 raise ValueError("Config already exists; choose another --output path")
