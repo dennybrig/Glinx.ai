@@ -1,1 +1,1 @@
-{"name":"glinx-discovery","version":"0.1.0","private":true,"type":"module","scripts":{"test":"node --test tests/model.test.mjs","check":"node --check dist/app.js && node --check dist/model.js"}}
+{"name":"glinx-discovery","version":"0.1.0","private":true,"type":"module","scripts":{"test":"node --test tests/model.test.mjs tests/memory.test.mjs","check":"node --check dist/app.js && node --check dist/model.js && node --check dist/memory.js && node --check dist/memory-model.js"}}

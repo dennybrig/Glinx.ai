@@ -1,0 +1,2999 @@
+{
+  "company_memory_version": "1.0",
+  "company": {
+    "id": "8044b4a0-dfe4-5e60-9f80-a1deff090001",
+    "name": "Alder Forge",
+    "purpose": "Deliver dependable forged components while protecting quality, delivery commitments, and working capital.",
+    "mode": "demo"
+  },
+  "scope": {
+    "id": "alder-forge-pilot",
+    "revision": 1,
+    "description": "The same fictional workstation, mail domain, enterprise-app source, and owner inventory. No scope expansion across these snapshots."
+  },
+  "runs": [
+    {
+      "run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+      "generated_at": "2026-09-09T09:42:00.000000+00:00",
+      "imported_at": "2026-09-10T18:10:33.478826+00:00",
+      "legacy_scan_id": "demo-alder-forge-v1",
+      "report": {
+        "agent_version": "0.1.0",
+        "collectors": [
+          {
+            "count": 6,
+            "detail": "SAMPLE · Application names from one fictional Windows workstation. Other company devices were not examined.",
+            "id": "endpoint",
+            "name": "Installed applications",
+            "status": "complete"
+          },
+          {
+            "count": 1,
+            "detail": "SAMPLE · MX records suggest Microsoft mail routing. Email contents were not accessed.",
+            "id": "dns",
+            "name": "Mail domain",
+            "status": "complete"
+          },
+          {
+            "count": 2,
+            "detail": "SAMPLE · Two enterprise application registrations. Registration is not proof of active use or SSO configuration.",
+            "id": "m365",
+            "name": "Microsoft 365 applications",
+            "status": "complete"
+          },
+          {
+            "count": 5,
+            "detail": "SAMPLE · Five system statements and three integrations reported by company owners. None were independently verified.",
+            "id": "inventory",
+            "name": "Owner-provided inventory",
+            "status": "complete"
+          },
+          {
+            "count": 0,
+            "detail": "SAMPLE · Direct ERP endpoint inspection has not been enabled. ERP findings come from endpoint and owner inventory evidence.",
+            "id": "endpoints",
+            "name": "Approved ERP web endpoints",
+            "status": "not_configured"
+          }
+        ],
+        "company": "Alder Forge",
+        "generated_at": "2026-09-09T09:42:00Z",
+        "limitations": [
+          "All company names, evidence, owners, and integrations in this report are fictional demo data.",
+          "The map covers one sample endpoint and selected sample sources. Total company coverage is unknown.",
+          "Detection scores are rule-based signal strengths, not calibrated probabilities.",
+          "Integration links are owner-reported; no live data flow was measured."
+        ],
+        "mode": "demo",
+        "relationships": [
+          {
+            "evidence": "SAMPLE · Operations owner reports that Epicor uses this SQL Server. The agent has not connected to either application to verify the relationship.",
+            "id": "r-erp-db",
+            "label": "Production database",
+            "source": "epicor",
+            "status": "reported",
+            "target": "sql"
+          },
+          {
+            "evidence": "SAMPLE · Finance reports exporting an Epicor CSV monthly into Power BI. The transfer frequency and mechanism remain owner-reported.",
+            "id": "r-erp-bi",
+            "label": "Monthly CSV transfer",
+            "source": "epicor",
+            "status": "reported",
+            "target": "powerbi"
+          },
+          {
+            "evidence": "SAMPLE · Finance reports importing payroll journal exports into QuickBooks. No payroll data or integration configuration was accessed.",
+            "id": "r-hr-fin",
+            "label": "Payroll journal export",
+            "source": "adp",
+            "status": "reported",
+            "target": "quickbooks"
+          }
+        ],
+        "scan_id": "demo-alder-forge-v1",
+        "schema_version": "1.0",
+        "scope": "Fictional manufacturing company; all evidence is sample data",
+        "systems": [
+          {
+            "attributes": {},
+            "category": "ERP",
+            "confidence": 90,
+            "evidence": [
+              {
+                "confidence": 90,
+                "id": "demo-endpoint-epicor",
+                "locator": "SAMPLE · epicor",
+                "observed_at": "2026-09-09T09:42:00Z",
+                "source": "endpoint",
+                "status": "observed",
+                "summary": "Sample endpoint inventory contains an Epicor Kinetic client. This is an installation record; active use has not been independently checked."
+              },
+              {
+                "confidence": 75,
+                "id": "demo-inventory-epicor-owner",
+                "locator": "SAMPLE · epicor-owner",
+                "observed_at": "2026-09-09T09:42:00Z",
+                "source": "inventory",
+                "status": "reported",
+                "summary": "Sample owner inventory identifies Epicor as the production planning system. Owner-reported context; not independently verified."
+              }
+            ],
+            "id": "epicor",
+            "name": "Epicor Kinetic",
+            "owner": "Operations",
+            "status": "observed"
+          },
+          {
+            "attributes": {},
+            "category": "Email",
+            "confidence": 60,
+            "evidence": [
+              {
+                "confidence": 60,
+                "id": "demo-dns-m365",
+                "locator": "SAMPLE · m365",
+                "observed_at": "2026-09-09T09:42:00Z",
+                "source": "dns",
+                "status": "inferred",
+                "summary": "Sample MX record points to alderforge-example.mail.protection.outlook.com. This suggests Microsoft mail routing; it does not prove active mailboxes."
+              }
+            ],
+            "id": "m365",
+            "name": "Microsoft 365",
+            "owner": "IT",
+            "status": "inferred"
+          },
+          {
+            "attributes": {},
+            "category": "CRM",
+            "confidence": 90,
+            "evidence": [
+              {
+                "confidence": 90,
+                "id": "demo-m365-salesforce",
+                "locator": "SAMPLE · salesforce",
+                "observed_at": "2026-09-09T09:42:00Z",
+                "source": "m365",
+                "status": "observed",
+                "summary": "Sample Microsoft Entra enterprise application registration for Salesforce. Registration does not establish active use or a configured SSO connection."
+              }
+            ],
+            "id": "salesforce",
+            "name": "Salesforce",
+            "owner": "Sales",
+            "status": "observed"
+          },
+          {
+            "attributes": {},
+            "category": "People",
+            "confidence": 75,
+            "evidence": [
+              {
+                "confidence": 75,
+                "id": "demo-inventory-adp",
+                "locator": "SAMPLE · adp",
+                "observed_at": "2026-09-09T09:42:00Z",
+                "source": "inventory",
+                "status": "reported",
+                "summary": "Sample owner-provided inventory lists ADP Workforce Now for payroll and HR."
+              }
+            ],
+            "id": "adp",
+            "name": "ADP Workforce Now",
+            "owner": "People",
+            "status": "reported"
+          },
+          {
+            "attributes": {},
+            "category": "Finance",
+            "confidence": 90,
+            "evidence": [
+              {
+                "confidence": 90,
+                "id": "demo-endpoint-quickbooks",
+                "locator": "SAMPLE · quickbooks",
+                "observed_at": "2026-09-09T09:42:00Z",
+                "source": "endpoint",
+                "status": "observed",
+                "summary": "Sample installation inventory includes QuickBooks. Confirm its business purpose and whether it overlaps with ERP finance modules."
+              }
+            ],
+            "id": "quickbooks",
+            "name": "QuickBooks",
+            "owner": "Finance",
+            "status": "observed"
+          },
+          {
+            "attributes": {},
+            "category": "Collaboration",
+            "confidence": 90,
+            "evidence": [
+              {
+                "confidence": 90,
+                "id": "demo-endpoint-teams",
+                "locator": "SAMPLE · teams",
+                "observed_at": "2026-09-09T09:42:00Z",
+                "source": "endpoint",
+                "status": "observed",
+                "summary": "Sample endpoint installation record for Microsoft Teams. No messages, meetings, or user accounts were read."
+              }
+            ],
+            "id": "teams",
+            "name": "Microsoft Teams",
+            "owner": "IT",
+            "status": "observed"
+          },
+          {
+            "attributes": {},
+            "category": "Collaboration",
+            "confidence": 90,
+            "evidence": [
+              {
+                "confidence": 90,
+                "id": "demo-m365-sharepoint",
+                "locator": "SAMPLE · sharepoint",
+                "observed_at": "2026-09-09T09:42:00Z",
+                "source": "m365",
+                "status": "observed",
+                "summary": "Sample enterprise application registration for SharePoint. No site content, documents, or permissions were collected."
+              }
+            ],
+            "id": "sharepoint",
+            "name": "SharePoint",
+            "owner": "IT",
+            "status": "observed"
+          },
+          {
+            "attributes": {},
+            "category": "Data",
+            "confidence": 90,
+            "evidence": [
+              {
+                "confidence": 90,
+                "id": "demo-endpoint-powerbi",
+                "locator": "SAMPLE · powerbi",
+                "observed_at": "2026-09-09T09:42:00Z",
+                "source": "endpoint",
+                "status": "observed",
+                "summary": "Sample endpoint installation record for Power BI Desktop. No reports or datasets were read."
+              },
+              {
+                "confidence": 75,
+                "id": "demo-inventory-powerbi-owner",
+                "locator": "SAMPLE · powerbi-owner",
+                "observed_at": "2026-09-09T09:42:00Z",
+                "source": "inventory",
+                "status": "reported",
+                "summary": "Sample owner inventory describes a monthly CSV transfer from Epicor to Power BI. No live data flow was measured."
+              }
+            ],
+            "id": "powerbi",
+            "name": "Power BI",
+            "owner": "Finance",
+            "status": "observed"
+          },
+          {
+            "attributes": {},
+            "category": "Data",
+            "confidence": 90,
+            "evidence": [
+              {
+                "confidence": 90,
+                "id": "demo-endpoint-sql",
+                "locator": "SAMPLE · sql",
+                "observed_at": "2026-09-09T09:42:00Z",
+                "source": "endpoint",
+                "status": "observed",
+                "summary": "Sample installation record includes Microsoft SQL Server. Databases, tables, credentials, and business records were not examined."
+              }
+            ],
+            "id": "sql",
+            "name": "Microsoft SQL Server",
+            "owner": "IT",
+            "status": "observed"
+          },
+          {
+            "attributes": {},
+            "category": "Collaboration",
+            "confidence": 90,
+            "evidence": [
+              {
+                "confidence": 90,
+                "id": "demo-endpoint-dropbox",
+                "locator": "SAMPLE · dropbox",
+                "observed_at": "2026-09-09T09:42:00Z",
+                "source": "endpoint",
+                "status": "observed",
+                "summary": "Sample endpoint inventory contains Dropbox. No owner was supplied; an installation alone does not establish unauthorized use."
+              }
+            ],
+            "id": "dropbox",
+            "name": "Dropbox",
+            "owner": "",
+            "status": "observed"
+          },
+          {
+            "attributes": {},
+            "category": "ERP",
+            "confidence": 75,
+            "evidence": [
+              {
+                "confidence": 75,
+                "id": "demo-inventory-odoo",
+                "locator": "SAMPLE · odoo",
+                "observed_at": "2026-09-09T09:42:00Z",
+                "source": "inventory",
+                "status": "reported",
+                "summary": "Sample owner inventory lists an Odoo pilot with no assigned owner. Confirm whether it is active and what process it supports."
+              }
+            ],
+            "id": "odoo",
+            "name": "Odoo",
+            "owner": "",
+            "status": "reported"
+          },
+          {
+            "attributes": {},
+            "category": "Unclassified",
+            "confidence": 75,
+            "evidence": [
+              {
+                "confidence": 75,
+                "id": "demo-inventory-maintenance",
+                "locator": "SAMPLE · maintenance",
+                "observed_at": "2026-09-09T09:42:00Z",
+                "source": "inventory",
+                "status": "reported",
+                "summary": "Sample inventory lists a local maintenance tracker with no business owner or system category."
+              }
+            ],
+            "id": "maintenance",
+            "name": "Maintenance Tracker",
+            "owner": "",
+            "status": "reported"
+          }
+        ]
+      },
+      "label": "The starting point",
+      "narrative": "12 systems discovered. The company now has a first recorded view."
+    },
+    {
+      "run_id": "f1e481f2-30a7-4cf7-be2c-08204d83fb0a",
+      "generated_at": "2026-09-10T09:42:00.000000+00:00",
+      "imported_at": "2026-09-10T18:10:33.479599+00:00",
+      "legacy_scan_id": "alder-followup",
+      "report": {
+        "agent_version": "0.1.0",
+        "collectors": [
+          {
+            "count": 6,
+            "detail": "SAMPLE · Application names from one fictional Windows workstation. Other company devices were not examined.",
+            "id": "endpoint",
+            "name": "Installed applications",
+            "status": "complete"
+          },
+          {
+            "count": 1,
+            "detail": "SAMPLE · MX records suggest Microsoft mail routing. Email contents were not accessed.",
+            "id": "dns",
+            "name": "Mail domain",
+            "status": "complete"
+          },
+          {
+            "count": 2,
+            "detail": "SAMPLE · Two enterprise application registrations. Registration is not proof of active use or SSO configuration.",
+            "id": "m365",
+            "name": "Microsoft 365 applications",
+            "status": "complete"
+          },
+          {
+            "count": 7,
+            "detail": "SAMPLE · Owner-reported inventory and connections. Statements are not independently verified.",
+            "id": "inventory",
+            "name": "Owner-provided inventory",
+            "status": "complete"
+          },
+          {
+            "count": 0,
+            "detail": "SAMPLE · Direct ERP endpoint inspection has not been enabled. ERP findings come from endpoint and owner inventory evidence.",
+            "id": "endpoints",
+            "name": "Approved ERP web endpoints",
+            "status": "not_configured"
+          }
+        ],
+        "company": "Alder Forge",
+        "generated_at": "2026-09-10T09:42:00Z",
+        "limitations": [
+          "All company names, evidence, owners, and integrations in this report are fictional demo data.",
+          "The map covers one sample endpoint and selected sample sources. Total company coverage is unknown.",
+          "Detection scores are rule-based signal strengths, not calibrated probabilities.",
+          "Integration links are owner-reported; no live data flow was measured."
+        ],
+        "mode": "demo",
+        "relationships": [
+          {
+            "evidence": "SAMPLE · Operations owner reports that Epicor uses this SQL Server. The agent has not connected to either application to verify the relationship.",
+            "id": "r-erp-db",
+            "label": "Production database",
+            "source": "epicor",
+            "status": "reported",
+            "target": "sql"
+          },
+          {
+            "evidence": "SAMPLE · Finance reports exporting an Epicor CSV monthly into Power BI. The transfer frequency and mechanism remain owner-reported.",
+            "id": "r-erp-bi",
+            "label": "Monthly CSV transfer",
+            "source": "epicor",
+            "status": "reported",
+            "target": "powerbi"
+          },
+          {
+            "evidence": "SAMPLE · Finance reports importing payroll journal exports into QuickBooks. No payroll data or integration configuration was accessed.",
+            "id": "r-hr-fin",
+            "label": "Payroll journal export",
+            "source": "adp",
+            "status": "reported",
+            "target": "quickbooks"
+          },
+          {
+            "evidence": "SAMPLE · Maintenance reports exporting work orders from Fiix to Epicor. No application connection or data transfer was verified.",
+            "id": "r-fiix-epicor",
+            "label": "Maintenance work order export",
+            "source": "fiix",
+            "status": "reported",
+            "target": "epicor"
+          }
+        ],
+        "scan_id": "alder-followup",
+        "schema_version": "1.0",
+        "scope": "Fictional manufacturing company; all evidence is sample data",
+        "systems": [
+          {
+            "attributes": {},
+            "category": "ERP",
+            "confidence": 90,
+            "evidence": [
+              {
+                "confidence": 90,
+                "id": "demo-endpoint-epicor",
+                "locator": "SAMPLE · epicor",
+                "observed_at": "2026-09-10T09:42:00Z",
+                "source": "endpoint",
+                "status": "observed",
+                "summary": "Sample endpoint inventory contains an Epicor Kinetic client. This is an installation record; active use has not been independently checked."
+              },
+              {
+                "confidence": 75,
+                "id": "demo-inventory-epicor-owner",
+                "locator": "SAMPLE · epicor-owner",
+                "observed_at": "2026-09-10T09:42:00Z",
+                "source": "inventory",
+                "status": "reported",
+                "summary": "Sample owner inventory identifies Epicor as the production planning system. Owner-reported context; not independently verified."
+              }
+            ],
+            "id": "epicor",
+            "name": "Epicor Kinetic",
+            "owner": "Operations",
+            "status": "observed"
+          },
+          {
+            "attributes": {},
+            "category": "Email",
+            "confidence": 60,
+            "evidence": [
+              {
+                "confidence": 60,
+                "id": "demo-dns-m365",
+                "locator": "SAMPLE · m365",
+                "observed_at": "2026-09-10T09:42:00Z",
+                "source": "dns",
+                "status": "inferred",
+                "summary": "Sample MX record points to alderforge-example.mail.protection.outlook.com. This suggests Microsoft mail routing; it does not prove active mailboxes."
+              }
+            ],
+            "id": "m365",
+            "name": "Microsoft 365",
+            "owner": "IT",
+            "status": "inferred"
+          },
+          {
+            "attributes": {},
+            "category": "CRM",
+            "confidence": 90,
+            "evidence": [
+              {
+                "confidence": 90,
+                "id": "demo-m365-salesforce",
+                "locator": "SAMPLE · salesforce",
+                "observed_at": "2026-09-10T09:42:00Z",
+                "source": "m365",
+                "status": "observed",
+                "summary": "Sample Microsoft Entra enterprise application registration for Salesforce. Registration does not establish active use or a configured SSO connection."
+              }
+            ],
+            "id": "salesforce",
+            "name": "Salesforce",
+            "owner": "Sales",
+            "status": "observed"
+          },
+          {
+            "attributes": {},
+            "category": "People",
+            "confidence": 75,
+            "evidence": [
+              {
+                "confidence": 75,
+                "id": "demo-inventory-adp",
+                "locator": "SAMPLE · adp",
+                "observed_at": "2026-09-10T09:42:00Z",
+                "source": "inventory",
+                "status": "reported",
+                "summary": "Sample owner-provided inventory lists ADP Workforce Now for payroll and HR."
+              }
+            ],
+            "id": "adp",
+            "name": "ADP Workforce Now",
+            "owner": "People",
+            "status": "reported"
+          },
+          {
+            "attributes": {},
+            "category": "Finance",
+            "confidence": 90,
+            "evidence": [
+              {
+                "confidence": 90,
+                "id": "demo-endpoint-quickbooks",
+                "locator": "SAMPLE · quickbooks",
+                "observed_at": "2026-09-10T09:42:00Z",
+                "source": "endpoint",
+                "status": "observed",
+                "summary": "Sample installation inventory includes QuickBooks. Confirm its business purpose and whether it overlaps with ERP finance modules."
+              }
+            ],
+            "id": "quickbooks",
+            "name": "QuickBooks",
+            "owner": "Finance",
+            "status": "observed"
+          },
+          {
+            "attributes": {},
+            "category": "Collaboration",
+            "confidence": 90,
+            "evidence": [
+              {
+                "confidence": 90,
+                "id": "demo-endpoint-teams",
+                "locator": "SAMPLE · teams",
+                "observed_at": "2026-09-10T09:42:00Z",
+                "source": "endpoint",
+                "status": "observed",
+                "summary": "Sample endpoint installation record for Microsoft Teams. No messages, meetings, or user accounts were read."
+              }
+            ],
+            "id": "teams",
+            "name": "Microsoft Teams",
+            "owner": "IT",
+            "status": "observed"
+          },
+          {
+            "attributes": {},
+            "category": "Collaboration",
+            "confidence": 90,
+            "evidence": [
+              {
+                "confidence": 90,
+                "id": "demo-m365-sharepoint",
+                "locator": "SAMPLE · sharepoint",
+                "observed_at": "2026-09-10T09:42:00Z",
+                "source": "m365",
+                "status": "observed",
+                "summary": "Sample enterprise application registration for SharePoint. No site content, documents, or permissions were collected."
+              }
+            ],
+            "id": "sharepoint",
+            "name": "SharePoint",
+            "owner": "IT",
+            "status": "observed"
+          },
+          {
+            "attributes": {},
+            "category": "Data",
+            "confidence": 90,
+            "evidence": [
+              {
+                "confidence": 90,
+                "id": "demo-endpoint-powerbi",
+                "locator": "SAMPLE · powerbi",
+                "observed_at": "2026-09-10T09:42:00Z",
+                "source": "endpoint",
+                "status": "observed",
+                "summary": "Sample endpoint installation record for Power BI Desktop. No reports or datasets were read."
+              },
+              {
+                "confidence": 75,
+                "id": "demo-inventory-powerbi-owner",
+                "locator": "SAMPLE · powerbi-owner",
+                "observed_at": "2026-09-10T09:42:00Z",
+                "source": "inventory",
+                "status": "reported",
+                "summary": "Sample owner inventory describes a monthly CSV transfer from Epicor to Power BI. No live data flow was measured."
+              }
+            ],
+            "id": "powerbi",
+            "name": "Power BI",
+            "owner": "Finance",
+            "status": "observed"
+          },
+          {
+            "attributes": {},
+            "category": "Data",
+            "confidence": 90,
+            "evidence": [
+              {
+                "confidence": 90,
+                "id": "demo-endpoint-sql",
+                "locator": "SAMPLE · sql",
+                "observed_at": "2026-09-10T09:42:00Z",
+                "source": "endpoint",
+                "status": "observed",
+                "summary": "Sample installation record includes Microsoft SQL Server. Databases, tables, credentials, and business records were not examined."
+              }
+            ],
+            "id": "sql",
+            "name": "Microsoft SQL Server",
+            "owner": "IT",
+            "status": "observed"
+          },
+          {
+            "attributes": {},
+            "category": "Collaboration",
+            "confidence": 90,
+            "evidence": [
+              {
+                "confidence": 90,
+                "id": "demo-endpoint-dropbox",
+                "locator": "SAMPLE · dropbox",
+                "observed_at": "2026-09-10T09:42:00Z",
+                "source": "endpoint",
+                "status": "observed",
+                "summary": "Sample endpoint inventory contains Dropbox. No owner was supplied; an installation alone does not establish unauthorized use."
+              },
+              {
+                "confidence": 75,
+                "id": "dropbox-owner",
+                "locator": "Owner inventory · Dropbox",
+                "observed_at": "2026-09-10T09:42:00Z",
+                "source": "inventory",
+                "status": "reported",
+                "summary": "SAMPLE · Maya Chen is reported as the Dropbox owner by IT. This ownership statement is not independently verified."
+              }
+            ],
+            "id": "dropbox",
+            "name": "Dropbox",
+            "owner": "Maya Chen · IT",
+            "status": "observed"
+          },
+          {
+            "attributes": {},
+            "category": "ERP",
+            "confidence": 75,
+            "evidence": [
+              {
+                "confidence": 75,
+                "id": "demo-inventory-odoo",
+                "locator": "SAMPLE · odoo",
+                "observed_at": "2026-09-10T09:42:00Z",
+                "source": "inventory",
+                "status": "reported",
+                "summary": "Sample owner inventory lists an Odoo pilot with no assigned owner. Confirm whether it is active and what process it supports."
+              }
+            ],
+            "id": "odoo",
+            "name": "Odoo",
+            "owner": "",
+            "status": "reported"
+          },
+          {
+            "attributes": {},
+            "category": "Unclassified",
+            "confidence": 75,
+            "evidence": [
+              {
+                "confidence": 75,
+                "id": "demo-inventory-maintenance",
+                "locator": "SAMPLE · maintenance",
+                "observed_at": "2026-09-10T09:42:00Z",
+                "source": "inventory",
+                "status": "reported",
+                "summary": "Sample inventory lists a local maintenance tracker with no business owner or system category."
+              }
+            ],
+            "id": "maintenance",
+            "name": "Maintenance Tracker",
+            "owner": "",
+            "status": "reported"
+          },
+          {
+            "attributes": {
+              "business_function": "Maintenance"
+            },
+            "category": "Unclassified",
+            "confidence": 75,
+            "evidence": [
+              {
+                "confidence": 75,
+                "id": "fiix-inventory",
+                "locator": "Owner inventory · Fiix",
+                "observed_at": "2026-09-10T09:42:00Z",
+                "source": "inventory",
+                "status": "reported",
+                "summary": "SAMPLE · The maintenance owner lists Fiix CMMS. It is newly disclosed to Glinx; its installation date and active use are unverified."
+              }
+            ],
+            "id": "fiix",
+            "name": "Fiix CMMS",
+            "owner": "Luis Ortega · Maintenance",
+            "status": "reported"
+          }
+        ]
+      },
+      "label": "The company changes",
+      "narrative": "Fiix is disclosed, Dropbox gets an owner, and a connection is reported."
+    },
+    {
+      "run_id": "a7a7532c-a636-4ed8-86ac-82f269dd78c0",
+      "generated_at": "2026-09-11T09:42:00.000000+00:00",
+      "imported_at": "2026-09-10T18:10:33.480104+00:00",
+      "legacy_scan_id": "alder-visibility-gap",
+      "report": {
+        "agent_version": "0.1.0",
+        "collectors": [
+          {
+            "count": 6,
+            "detail": "SAMPLE · Application names from one fictional Windows workstation. Other company devices were not examined.",
+            "id": "endpoint",
+            "name": "Installed applications",
+            "status": "complete"
+          },
+          {
+            "count": 1,
+            "detail": "SAMPLE · MX records suggest Microsoft mail routing. Email contents were not accessed.",
+            "id": "dns",
+            "name": "Mail domain",
+            "status": "complete"
+          },
+          {
+            "count": 0,
+            "detail": "SAMPLE · Microsoft 365 application metadata could not be read. Salesforce and SharePoint were not assessed in this snapshot.",
+            "id": "m365",
+            "name": "Microsoft 365 applications",
+            "status": "error"
+          },
+          {
+            "count": 6,
+            "detail": "SAMPLE · Owner inventory was read successfully. Odoo is absent from this supplied inventory; removal has not been established.",
+            "id": "inventory",
+            "name": "Owner-provided inventory",
+            "status": "complete"
+          },
+          {
+            "count": 0,
+            "detail": "SAMPLE · Direct ERP endpoint inspection has not been enabled. ERP findings come from endpoint and owner inventory evidence.",
+            "id": "endpoints",
+            "name": "Approved ERP web endpoints",
+            "status": "not_configured"
+          }
+        ],
+        "company": "Alder Forge",
+        "generated_at": "2026-09-11T09:42:00Z",
+        "limitations": [
+          "All company names, evidence, owners, and integrations in this report are fictional demo data.",
+          "The map covers one sample endpoint and selected sample sources. Total company coverage is unknown.",
+          "Detection scores are rule-based signal strengths, not calibrated probabilities.",
+          "Integration links are owner-reported; no live data flow was measured."
+        ],
+        "mode": "demo",
+        "relationships": [
+          {
+            "evidence": "SAMPLE · Operations owner reports that Epicor uses this SQL Server. The agent has not connected to either application to verify the relationship.",
+            "id": "r-erp-db",
+            "label": "Production database",
+            "source": "epicor",
+            "status": "reported",
+            "target": "sql"
+          },
+          {
+            "evidence": "SAMPLE · Finance reports exporting an Epicor CSV monthly into Power BI. The transfer frequency and mechanism remain owner-reported.",
+            "id": "r-erp-bi",
+            "label": "Monthly CSV transfer",
+            "source": "epicor",
+            "status": "reported",
+            "target": "powerbi"
+          },
+          {
+            "evidence": "SAMPLE · Finance reports importing payroll journal exports into QuickBooks. No payroll data or integration configuration was accessed.",
+            "id": "r-hr-fin",
+            "label": "Payroll journal export",
+            "source": "adp",
+            "status": "reported",
+            "target": "quickbooks"
+          },
+          {
+            "evidence": "SAMPLE · Maintenance reports exporting work orders from Fiix to Epicor. No application connection or data transfer was verified.",
+            "id": "r-fiix-epicor",
+            "label": "Maintenance work order export",
+            "source": "fiix",
+            "status": "reported",
+            "target": "epicor"
+          }
+        ],
+        "scan_id": "alder-visibility-gap",
+        "schema_version": "1.0",
+        "scope": "Fictional manufacturing company; all evidence is sample data",
+        "systems": [
+          {
+            "attributes": {},
+            "category": "ERP",
+            "confidence": 90,
+            "evidence": [
+              {
+                "confidence": 90,
+                "id": "demo-endpoint-epicor",
+                "locator": "SAMPLE · epicor",
+                "observed_at": "2026-09-11T09:42:00Z",
+                "source": "endpoint",
+                "status": "observed",
+                "summary": "Sample endpoint inventory contains an Epicor Kinetic client. This is an installation record; active use has not been independently checked."
+              },
+              {
+                "confidence": 75,
+                "id": "demo-inventory-epicor-owner",
+                "locator": "SAMPLE · epicor-owner",
+                "observed_at": "2026-09-11T09:42:00Z",
+                "source": "inventory",
+                "status": "reported",
+                "summary": "Sample owner inventory identifies Epicor as the production planning system. Owner-reported context; not independently verified."
+              }
+            ],
+            "id": "epicor",
+            "name": "Epicor Kinetic",
+            "owner": "Operations",
+            "status": "observed"
+          },
+          {
+            "attributes": {},
+            "category": "Email",
+            "confidence": 60,
+            "evidence": [
+              {
+                "confidence": 60,
+                "id": "demo-dns-m365",
+                "locator": "SAMPLE · m365",
+                "observed_at": "2026-09-11T09:42:00Z",
+                "source": "dns",
+                "status": "inferred",
+                "summary": "Sample MX record points to alderforge-example.mail.protection.outlook.com. This suggests Microsoft mail routing; it does not prove active mailboxes."
+              }
+            ],
+            "id": "m365",
+            "name": "Microsoft 365",
+            "owner": "IT",
+            "status": "inferred"
+          },
+          {
+            "attributes": {},
+            "category": "People",
+            "confidence": 75,
+            "evidence": [
+              {
+                "confidence": 75,
+                "id": "demo-inventory-adp",
+                "locator": "SAMPLE · adp",
+                "observed_at": "2026-09-11T09:42:00Z",
+                "source": "inventory",
+                "status": "reported",
+                "summary": "Sample owner-provided inventory lists ADP Workforce Now for payroll and HR."
+              }
+            ],
+            "id": "adp",
+            "name": "ADP Workforce Now",
+            "owner": "People",
+            "status": "reported"
+          },
+          {
+            "attributes": {},
+            "category": "Finance",
+            "confidence": 90,
+            "evidence": [
+              {
+                "confidence": 90,
+                "id": "demo-endpoint-quickbooks",
+                "locator": "SAMPLE · quickbooks",
+                "observed_at": "2026-09-11T09:42:00Z",
+                "source": "endpoint",
+                "status": "observed",
+                "summary": "Sample installation inventory includes QuickBooks. Confirm its business purpose and whether it overlaps with ERP finance modules."
+              }
+            ],
+            "id": "quickbooks",
+            "name": "QuickBooks",
+            "owner": "Finance",
+            "status": "observed"
+          },
+          {
+            "attributes": {},
+            "category": "Collaboration",
+            "confidence": 90,
+            "evidence": [
+              {
+                "confidence": 90,
+                "id": "demo-endpoint-teams",
+                "locator": "SAMPLE · teams",
+                "observed_at": "2026-09-11T09:42:00Z",
+                "source": "endpoint",
+                "status": "observed",
+                "summary": "Sample endpoint installation record for Microsoft Teams. No messages, meetings, or user accounts were read."
+              }
+            ],
+            "id": "teams",
+            "name": "Microsoft Teams",
+            "owner": "IT",
+            "status": "observed"
+          },
+          {
+            "attributes": {},
+            "category": "Data",
+            "confidence": 90,
+            "evidence": [
+              {
+                "confidence": 90,
+                "id": "demo-endpoint-powerbi",
+                "locator": "SAMPLE · powerbi",
+                "observed_at": "2026-09-11T09:42:00Z",
+                "source": "endpoint",
+                "status": "observed",
+                "summary": "Sample endpoint installation record for Power BI Desktop. No reports or datasets were read."
+              },
+              {
+                "confidence": 75,
+                "id": "demo-inventory-powerbi-owner",
+                "locator": "SAMPLE · powerbi-owner",
+                "observed_at": "2026-09-11T09:42:00Z",
+                "source": "inventory",
+                "status": "reported",
+                "summary": "Sample owner inventory describes a monthly CSV transfer from Epicor to Power BI. No live data flow was measured."
+              }
+            ],
+            "id": "powerbi",
+            "name": "Power BI",
+            "owner": "Finance",
+            "status": "observed"
+          },
+          {
+            "attributes": {},
+            "category": "Data",
+            "confidence": 90,
+            "evidence": [
+              {
+                "confidence": 90,
+                "id": "demo-endpoint-sql",
+                "locator": "SAMPLE · sql",
+                "observed_at": "2026-09-11T09:42:00Z",
+                "source": "endpoint",
+                "status": "observed",
+                "summary": "Sample installation record includes Microsoft SQL Server. Databases, tables, credentials, and business records were not examined."
+              }
+            ],
+            "id": "sql",
+            "name": "Microsoft SQL Server",
+            "owner": "IT",
+            "status": "observed"
+          },
+          {
+            "attributes": {},
+            "category": "Collaboration",
+            "confidence": 90,
+            "evidence": [
+              {
+                "confidence": 90,
+                "id": "demo-endpoint-dropbox",
+                "locator": "SAMPLE · dropbox",
+                "observed_at": "2026-09-11T09:42:00Z",
+                "source": "endpoint",
+                "status": "observed",
+                "summary": "Sample endpoint inventory contains Dropbox. No owner was supplied; an installation alone does not establish unauthorized use."
+              },
+              {
+                "confidence": 75,
+                "id": "dropbox-owner",
+                "locator": "Owner inventory · Dropbox",
+                "observed_at": "2026-09-11T09:42:00Z",
+                "source": "inventory",
+                "status": "reported",
+                "summary": "SAMPLE · Maya Chen is reported as the Dropbox owner by IT. This ownership statement is not independently verified."
+              }
+            ],
+            "id": "dropbox",
+            "name": "Dropbox",
+            "owner": "Maya Chen · IT",
+            "status": "observed"
+          },
+          {
+            "attributes": {},
+            "category": "Unclassified",
+            "confidence": 75,
+            "evidence": [
+              {
+                "confidence": 75,
+                "id": "demo-inventory-maintenance",
+                "locator": "SAMPLE · maintenance",
+                "observed_at": "2026-09-11T09:42:00Z",
+                "source": "inventory",
+                "status": "reported",
+                "summary": "Sample inventory lists a local maintenance tracker with no business owner or system category."
+              }
+            ],
+            "id": "maintenance",
+            "name": "Maintenance Tracker",
+            "owner": "",
+            "status": "reported"
+          },
+          {
+            "attributes": {
+              "business_function": "Maintenance"
+            },
+            "category": "Unclassified",
+            "confidence": 75,
+            "evidence": [
+              {
+                "confidence": 75,
+                "id": "fiix-inventory",
+                "locator": "Owner inventory · Fiix",
+                "observed_at": "2026-09-11T09:42:00Z",
+                "source": "inventory",
+                "status": "reported",
+                "summary": "SAMPLE · The maintenance owner lists Fiix CMMS. It is newly disclosed to Glinx; its installation date and active use are unverified."
+              }
+            ],
+            "id": "fiix",
+            "name": "Fiix CMMS",
+            "owner": "Luis Ortega · Maintenance",
+            "status": "reported"
+          }
+        ]
+      },
+      "label": "Visibility is interrupted",
+      "narrative": "An app source fails. Glinx retains what it knew and makes the gap visible."
+    }
+  ],
+  "views": [
+    {
+      "run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+      "systems": [
+        {
+          "first_run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+          "first_seen": "2026-09-09T09:42:00.000000+00:00",
+          "history": [
+            "89926b8d-a455-45af-a8a4-d110c2b02b7b"
+          ],
+          "owner_claims": [
+            {
+              "owner": "Sales",
+              "run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+              "status": "reported"
+            }
+          ],
+          "identity_resolution": "legacy_product_aggregate",
+          "record": {
+            "attributes": {},
+            "category": "CRM",
+            "confidence": 90,
+            "evidence": [
+              {
+                "confidence": 90,
+                "id": "demo-m365-salesforce",
+                "locator": "SAMPLE · salesforce",
+                "observed_at": "2026-09-09T09:42:00Z",
+                "source": "m365",
+                "status": "observed",
+                "summary": "Sample Microsoft Entra enterprise application registration for Salesforce. Registration does not establish active use or a configured SSO connection."
+              }
+            ],
+            "id": "salesforce",
+            "name": "Salesforce",
+            "owner": "Sales",
+            "status": "observed"
+          },
+          "last_run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+          "last_seen": "2026-09-09T09:42:00.000000+00:00",
+          "visibility": "seen",
+          "unavailable_sources": []
+        },
+        {
+          "first_run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+          "first_seen": "2026-09-09T09:42:00.000000+00:00",
+          "history": [
+            "89926b8d-a455-45af-a8a4-d110c2b02b7b"
+          ],
+          "owner_claims": [],
+          "identity_resolution": "legacy_product_aggregate",
+          "record": {
+            "attributes": {},
+            "category": "Collaboration",
+            "confidence": 90,
+            "evidence": [
+              {
+                "confidence": 90,
+                "id": "demo-endpoint-dropbox",
+                "locator": "SAMPLE · dropbox",
+                "observed_at": "2026-09-09T09:42:00Z",
+                "source": "endpoint",
+                "status": "observed",
+                "summary": "Sample endpoint inventory contains Dropbox. No owner was supplied; an installation alone does not establish unauthorized use."
+              }
+            ],
+            "id": "dropbox",
+            "name": "Dropbox",
+            "owner": "",
+            "status": "observed"
+          },
+          "last_run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+          "last_seen": "2026-09-09T09:42:00.000000+00:00",
+          "visibility": "seen",
+          "unavailable_sources": []
+        },
+        {
+          "first_run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+          "first_seen": "2026-09-09T09:42:00.000000+00:00",
+          "history": [
+            "89926b8d-a455-45af-a8a4-d110c2b02b7b"
+          ],
+          "owner_claims": [
+            {
+              "owner": "IT",
+              "run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+              "status": "reported"
+            }
+          ],
+          "identity_resolution": "legacy_product_aggregate",
+          "record": {
+            "attributes": {},
+            "category": "Collaboration",
+            "confidence": 90,
+            "evidence": [
+              {
+                "confidence": 90,
+                "id": "demo-endpoint-teams",
+                "locator": "SAMPLE · teams",
+                "observed_at": "2026-09-09T09:42:00Z",
+                "source": "endpoint",
+                "status": "observed",
+                "summary": "Sample endpoint installation record for Microsoft Teams. No messages, meetings, or user accounts were read."
+              }
+            ],
+            "id": "teams",
+            "name": "Microsoft Teams",
+            "owner": "IT",
+            "status": "observed"
+          },
+          "last_run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+          "last_seen": "2026-09-09T09:42:00.000000+00:00",
+          "visibility": "seen",
+          "unavailable_sources": []
+        },
+        {
+          "first_run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+          "first_seen": "2026-09-09T09:42:00.000000+00:00",
+          "history": [
+            "89926b8d-a455-45af-a8a4-d110c2b02b7b"
+          ],
+          "owner_claims": [
+            {
+              "owner": "IT",
+              "run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+              "status": "reported"
+            }
+          ],
+          "identity_resolution": "legacy_product_aggregate",
+          "record": {
+            "attributes": {},
+            "category": "Collaboration",
+            "confidence": 90,
+            "evidence": [
+              {
+                "confidence": 90,
+                "id": "demo-m365-sharepoint",
+                "locator": "SAMPLE · sharepoint",
+                "observed_at": "2026-09-09T09:42:00Z",
+                "source": "m365",
+                "status": "observed",
+                "summary": "Sample enterprise application registration for SharePoint. No site content, documents, or permissions were collected."
+              }
+            ],
+            "id": "sharepoint",
+            "name": "SharePoint",
+            "owner": "IT",
+            "status": "observed"
+          },
+          "last_run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+          "last_seen": "2026-09-09T09:42:00.000000+00:00",
+          "visibility": "seen",
+          "unavailable_sources": []
+        },
+        {
+          "first_run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+          "first_seen": "2026-09-09T09:42:00.000000+00:00",
+          "history": [
+            "89926b8d-a455-45af-a8a4-d110c2b02b7b"
+          ],
+          "owner_claims": [
+            {
+              "owner": "IT",
+              "run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+              "status": "reported"
+            }
+          ],
+          "identity_resolution": "legacy_product_aggregate",
+          "record": {
+            "attributes": {},
+            "category": "Data",
+            "confidence": 90,
+            "evidence": [
+              {
+                "confidence": 90,
+                "id": "demo-endpoint-sql",
+                "locator": "SAMPLE · sql",
+                "observed_at": "2026-09-09T09:42:00Z",
+                "source": "endpoint",
+                "status": "observed",
+                "summary": "Sample installation record includes Microsoft SQL Server. Databases, tables, credentials, and business records were not examined."
+              }
+            ],
+            "id": "sql",
+            "name": "Microsoft SQL Server",
+            "owner": "IT",
+            "status": "observed"
+          },
+          "last_run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+          "last_seen": "2026-09-09T09:42:00.000000+00:00",
+          "visibility": "seen",
+          "unavailable_sources": []
+        },
+        {
+          "first_run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+          "first_seen": "2026-09-09T09:42:00.000000+00:00",
+          "history": [
+            "89926b8d-a455-45af-a8a4-d110c2b02b7b"
+          ],
+          "owner_claims": [
+            {
+              "owner": "Finance",
+              "run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+              "status": "reported"
+            }
+          ],
+          "identity_resolution": "legacy_product_aggregate",
+          "record": {
+            "attributes": {},
+            "category": "Data",
+            "confidence": 90,
+            "evidence": [
+              {
+                "confidence": 90,
+                "id": "demo-endpoint-powerbi",
+                "locator": "SAMPLE · powerbi",
+                "observed_at": "2026-09-09T09:42:00Z",
+                "source": "endpoint",
+                "status": "observed",
+                "summary": "Sample endpoint installation record for Power BI Desktop. No reports or datasets were read."
+              },
+              {
+                "confidence": 75,
+                "id": "demo-inventory-powerbi-owner",
+                "locator": "SAMPLE · powerbi-owner",
+                "observed_at": "2026-09-09T09:42:00Z",
+                "source": "inventory",
+                "status": "reported",
+                "summary": "Sample owner inventory describes a monthly CSV transfer from Epicor to Power BI. No live data flow was measured."
+              }
+            ],
+            "id": "powerbi",
+            "name": "Power BI",
+            "owner": "Finance",
+            "status": "observed"
+          },
+          "last_run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+          "last_seen": "2026-09-09T09:42:00.000000+00:00",
+          "visibility": "seen",
+          "unavailable_sources": []
+        },
+        {
+          "first_run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+          "first_seen": "2026-09-09T09:42:00.000000+00:00",
+          "history": [
+            "89926b8d-a455-45af-a8a4-d110c2b02b7b"
+          ],
+          "owner_claims": [
+            {
+              "owner": "Operations",
+              "run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+              "status": "reported"
+            }
+          ],
+          "identity_resolution": "legacy_product_aggregate",
+          "record": {
+            "attributes": {},
+            "category": "ERP",
+            "confidence": 90,
+            "evidence": [
+              {
+                "confidence": 90,
+                "id": "demo-endpoint-epicor",
+                "locator": "SAMPLE · epicor",
+                "observed_at": "2026-09-09T09:42:00Z",
+                "source": "endpoint",
+                "status": "observed",
+                "summary": "Sample endpoint inventory contains an Epicor Kinetic client. This is an installation record; active use has not been independently checked."
+              },
+              {
+                "confidence": 75,
+                "id": "demo-inventory-epicor-owner",
+                "locator": "SAMPLE · epicor-owner",
+                "observed_at": "2026-09-09T09:42:00Z",
+                "source": "inventory",
+                "status": "reported",
+                "summary": "Sample owner inventory identifies Epicor as the production planning system. Owner-reported context; not independently verified."
+              }
+            ],
+            "id": "epicor",
+            "name": "Epicor Kinetic",
+            "owner": "Operations",
+            "status": "observed"
+          },
+          "last_run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+          "last_seen": "2026-09-09T09:42:00.000000+00:00",
+          "visibility": "seen",
+          "unavailable_sources": []
+        },
+        {
+          "first_run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+          "first_seen": "2026-09-09T09:42:00.000000+00:00",
+          "history": [
+            "89926b8d-a455-45af-a8a4-d110c2b02b7b"
+          ],
+          "owner_claims": [],
+          "identity_resolution": "legacy_product_aggregate",
+          "record": {
+            "attributes": {},
+            "category": "ERP",
+            "confidence": 75,
+            "evidence": [
+              {
+                "confidence": 75,
+                "id": "demo-inventory-odoo",
+                "locator": "SAMPLE · odoo",
+                "observed_at": "2026-09-09T09:42:00Z",
+                "source": "inventory",
+                "status": "reported",
+                "summary": "Sample owner inventory lists an Odoo pilot with no assigned owner. Confirm whether it is active and what process it supports."
+              }
+            ],
+            "id": "odoo",
+            "name": "Odoo",
+            "owner": "",
+            "status": "reported"
+          },
+          "last_run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+          "last_seen": "2026-09-09T09:42:00.000000+00:00",
+          "visibility": "seen",
+          "unavailable_sources": []
+        },
+        {
+          "first_run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+          "first_seen": "2026-09-09T09:42:00.000000+00:00",
+          "history": [
+            "89926b8d-a455-45af-a8a4-d110c2b02b7b"
+          ],
+          "owner_claims": [
+            {
+              "owner": "IT",
+              "run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+              "status": "reported"
+            }
+          ],
+          "identity_resolution": "legacy_product_aggregate",
+          "record": {
+            "attributes": {},
+            "category": "Email",
+            "confidence": 60,
+            "evidence": [
+              {
+                "confidence": 60,
+                "id": "demo-dns-m365",
+                "locator": "SAMPLE · m365",
+                "observed_at": "2026-09-09T09:42:00Z",
+                "source": "dns",
+                "status": "inferred",
+                "summary": "Sample MX record points to alderforge-example.mail.protection.outlook.com. This suggests Microsoft mail routing; it does not prove active mailboxes."
+              }
+            ],
+            "id": "m365",
+            "name": "Microsoft 365",
+            "owner": "IT",
+            "status": "inferred"
+          },
+          "last_run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+          "last_seen": "2026-09-09T09:42:00.000000+00:00",
+          "visibility": "seen",
+          "unavailable_sources": []
+        },
+        {
+          "first_run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+          "first_seen": "2026-09-09T09:42:00.000000+00:00",
+          "history": [
+            "89926b8d-a455-45af-a8a4-d110c2b02b7b"
+          ],
+          "owner_claims": [
+            {
+              "owner": "Finance",
+              "run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+              "status": "reported"
+            }
+          ],
+          "identity_resolution": "legacy_product_aggregate",
+          "record": {
+            "attributes": {},
+            "category": "Finance",
+            "confidence": 90,
+            "evidence": [
+              {
+                "confidence": 90,
+                "id": "demo-endpoint-quickbooks",
+                "locator": "SAMPLE · quickbooks",
+                "observed_at": "2026-09-09T09:42:00Z",
+                "source": "endpoint",
+                "status": "observed",
+                "summary": "Sample installation inventory includes QuickBooks. Confirm its business purpose and whether it overlaps with ERP finance modules."
+              }
+            ],
+            "id": "quickbooks",
+            "name": "QuickBooks",
+            "owner": "Finance",
+            "status": "observed"
+          },
+          "last_run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+          "last_seen": "2026-09-09T09:42:00.000000+00:00",
+          "visibility": "seen",
+          "unavailable_sources": []
+        },
+        {
+          "first_run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+          "first_seen": "2026-09-09T09:42:00.000000+00:00",
+          "history": [
+            "89926b8d-a455-45af-a8a4-d110c2b02b7b"
+          ],
+          "owner_claims": [
+            {
+              "owner": "People",
+              "run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+              "status": "reported"
+            }
+          ],
+          "identity_resolution": "legacy_product_aggregate",
+          "record": {
+            "attributes": {},
+            "category": "People",
+            "confidence": 75,
+            "evidence": [
+              {
+                "confidence": 75,
+                "id": "demo-inventory-adp",
+                "locator": "SAMPLE · adp",
+                "observed_at": "2026-09-09T09:42:00Z",
+                "source": "inventory",
+                "status": "reported",
+                "summary": "Sample owner-provided inventory lists ADP Workforce Now for payroll and HR."
+              }
+            ],
+            "id": "adp",
+            "name": "ADP Workforce Now",
+            "owner": "People",
+            "status": "reported"
+          },
+          "last_run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+          "last_seen": "2026-09-09T09:42:00.000000+00:00",
+          "visibility": "seen",
+          "unavailable_sources": []
+        },
+        {
+          "first_run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+          "first_seen": "2026-09-09T09:42:00.000000+00:00",
+          "history": [
+            "89926b8d-a455-45af-a8a4-d110c2b02b7b"
+          ],
+          "owner_claims": [],
+          "identity_resolution": "legacy_product_aggregate",
+          "record": {
+            "attributes": {},
+            "category": "Unclassified",
+            "confidence": 75,
+            "evidence": [
+              {
+                "confidence": 75,
+                "id": "demo-inventory-maintenance",
+                "locator": "SAMPLE · maintenance",
+                "observed_at": "2026-09-09T09:42:00Z",
+                "source": "inventory",
+                "status": "reported",
+                "summary": "Sample inventory lists a local maintenance tracker with no business owner or system category."
+              }
+            ],
+            "id": "maintenance",
+            "name": "Maintenance Tracker",
+            "owner": "",
+            "status": "reported"
+          },
+          "last_run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+          "last_seen": "2026-09-09T09:42:00.000000+00:00",
+          "visibility": "seen",
+          "unavailable_sources": []
+        }
+      ],
+      "relationships": [
+        {
+          "first_run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+          "history": [
+            "89926b8d-a455-45af-a8a4-d110c2b02b7b"
+          ],
+          "record": {
+            "evidence": "SAMPLE · Operations owner reports that Epicor uses this SQL Server. The agent has not connected to either application to verify the relationship.",
+            "id": "r-erp-db",
+            "label": "Production database",
+            "source": "epicor",
+            "status": "reported",
+            "target": "sql"
+          },
+          "last_run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+          "visibility": "seen"
+        },
+        {
+          "first_run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+          "history": [
+            "89926b8d-a455-45af-a8a4-d110c2b02b7b"
+          ],
+          "record": {
+            "evidence": "SAMPLE · Finance reports exporting an Epicor CSV monthly into Power BI. The transfer frequency and mechanism remain owner-reported.",
+            "id": "r-erp-bi",
+            "label": "Monthly CSV transfer",
+            "source": "epicor",
+            "status": "reported",
+            "target": "powerbi"
+          },
+          "last_run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+          "visibility": "seen"
+        },
+        {
+          "first_run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+          "history": [
+            "89926b8d-a455-45af-a8a4-d110c2b02b7b"
+          ],
+          "record": {
+            "evidence": "SAMPLE · Finance reports importing payroll journal exports into QuickBooks. No payroll data or integration configuration was accessed.",
+            "id": "r-hr-fin",
+            "label": "Payroll journal export",
+            "source": "adp",
+            "status": "reported",
+            "target": "quickbooks"
+          },
+          "last_run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+          "visibility": "seen"
+        }
+      ],
+      "counts": {
+        "remembered": 12,
+        "seen": 12,
+        "unavailable": 0,
+        "not_seen": 0
+      }
+    },
+    {
+      "run_id": "f1e481f2-30a7-4cf7-be2c-08204d83fb0a",
+      "systems": [
+        {
+          "first_run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+          "first_seen": "2026-09-09T09:42:00.000000+00:00",
+          "history": [
+            "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+            "f1e481f2-30a7-4cf7-be2c-08204d83fb0a"
+          ],
+          "owner_claims": [
+            {
+              "owner": "Sales",
+              "run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+              "status": "reported"
+            }
+          ],
+          "identity_resolution": "legacy_product_aggregate",
+          "record": {
+            "attributes": {},
+            "category": "CRM",
+            "confidence": 90,
+            "evidence": [
+              {
+                "confidence": 90,
+                "id": "demo-m365-salesforce",
+                "locator": "SAMPLE · salesforce",
+                "observed_at": "2026-09-10T09:42:00Z",
+                "source": "m365",
+                "status": "observed",
+                "summary": "Sample Microsoft Entra enterprise application registration for Salesforce. Registration does not establish active use or a configured SSO connection."
+              }
+            ],
+            "id": "salesforce",
+            "name": "Salesforce",
+            "owner": "Sales",
+            "status": "observed"
+          },
+          "last_run_id": "f1e481f2-30a7-4cf7-be2c-08204d83fb0a",
+          "last_seen": "2026-09-10T09:42:00.000000+00:00",
+          "visibility": "seen",
+          "unavailable_sources": []
+        },
+        {
+          "first_run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+          "first_seen": "2026-09-09T09:42:00.000000+00:00",
+          "history": [
+            "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+            "f1e481f2-30a7-4cf7-be2c-08204d83fb0a"
+          ],
+          "owner_claims": [
+            {
+              "owner": "Maya Chen · IT",
+              "run_id": "f1e481f2-30a7-4cf7-be2c-08204d83fb0a",
+              "status": "reported"
+            }
+          ],
+          "identity_resolution": "legacy_product_aggregate",
+          "record": {
+            "attributes": {},
+            "category": "Collaboration",
+            "confidence": 90,
+            "evidence": [
+              {
+                "confidence": 90,
+                "id": "demo-endpoint-dropbox",
+                "locator": "SAMPLE · dropbox",
+                "observed_at": "2026-09-10T09:42:00Z",
+                "source": "endpoint",
+                "status": "observed",
+                "summary": "Sample endpoint inventory contains Dropbox. No owner was supplied; an installation alone does not establish unauthorized use."
+              },
+              {
+                "confidence": 75,
+                "id": "dropbox-owner",
+                "locator": "Owner inventory · Dropbox",
+                "observed_at": "2026-09-10T09:42:00Z",
+                "source": "inventory",
+                "status": "reported",
+                "summary": "SAMPLE · Maya Chen is reported as the Dropbox owner by IT. This ownership statement is not independently verified."
+              }
+            ],
+            "id": "dropbox",
+            "name": "Dropbox",
+            "owner": "Maya Chen · IT",
+            "status": "observed"
+          },
+          "last_run_id": "f1e481f2-30a7-4cf7-be2c-08204d83fb0a",
+          "last_seen": "2026-09-10T09:42:00.000000+00:00",
+          "visibility": "seen",
+          "unavailable_sources": []
+        },
+        {
+          "first_run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+          "first_seen": "2026-09-09T09:42:00.000000+00:00",
+          "history": [
+            "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+            "f1e481f2-30a7-4cf7-be2c-08204d83fb0a"
+          ],
+          "owner_claims": [
+            {
+              "owner": "IT",
+              "run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+              "status": "reported"
+            }
+          ],
+          "identity_resolution": "legacy_product_aggregate",
+          "record": {
+            "attributes": {},
+            "category": "Collaboration",
+            "confidence": 90,
+            "evidence": [
+              {
+                "confidence": 90,
+                "id": "demo-endpoint-teams",
+                "locator": "SAMPLE · teams",
+                "observed_at": "2026-09-10T09:42:00Z",
+                "source": "endpoint",
+                "status": "observed",
+                "summary": "Sample endpoint installation record for Microsoft Teams. No messages, meetings, or user accounts were read."
+              }
+            ],
+            "id": "teams",
+            "name": "Microsoft Teams",
+            "owner": "IT",
+            "status": "observed"
+          },
+          "last_run_id": "f1e481f2-30a7-4cf7-be2c-08204d83fb0a",
+          "last_seen": "2026-09-10T09:42:00.000000+00:00",
+          "visibility": "seen",
+          "unavailable_sources": []
+        },
+        {
+          "first_run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+          "first_seen": "2026-09-09T09:42:00.000000+00:00",
+          "history": [
+            "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+            "f1e481f2-30a7-4cf7-be2c-08204d83fb0a"
+          ],
+          "owner_claims": [
+            {
+              "owner": "IT",
+              "run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+              "status": "reported"
+            }
+          ],
+          "identity_resolution": "legacy_product_aggregate",
+          "record": {
+            "attributes": {},
+            "category": "Collaboration",
+            "confidence": 90,
+            "evidence": [
+              {
+                "confidence": 90,
+                "id": "demo-m365-sharepoint",
+                "locator": "SAMPLE · sharepoint",
+                "observed_at": "2026-09-10T09:42:00Z",
+                "source": "m365",
+                "status": "observed",
+                "summary": "Sample enterprise application registration for SharePoint. No site content, documents, or permissions were collected."
+              }
+            ],
+            "id": "sharepoint",
+            "name": "SharePoint",
+            "owner": "IT",
+            "status": "observed"
+          },
+          "last_run_id": "f1e481f2-30a7-4cf7-be2c-08204d83fb0a",
+          "last_seen": "2026-09-10T09:42:00.000000+00:00",
+          "visibility": "seen",
+          "unavailable_sources": []
+        },
+        {
+          "first_run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+          "first_seen": "2026-09-09T09:42:00.000000+00:00",
+          "history": [
+            "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+            "f1e481f2-30a7-4cf7-be2c-08204d83fb0a"
+          ],
+          "owner_claims": [
+            {
+              "owner": "IT",
+              "run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+              "status": "reported"
+            }
+          ],
+          "identity_resolution": "legacy_product_aggregate",
+          "record": {
+            "attributes": {},
+            "category": "Data",
+            "confidence": 90,
+            "evidence": [
+              {
+                "confidence": 90,
+                "id": "demo-endpoint-sql",
+                "locator": "SAMPLE · sql",
+                "observed_at": "2026-09-10T09:42:00Z",
+                "source": "endpoint",
+                "status": "observed",
+                "summary": "Sample installation record includes Microsoft SQL Server. Databases, tables, credentials, and business records were not examined."
+              }
+            ],
+            "id": "sql",
+            "name": "Microsoft SQL Server",
+            "owner": "IT",
+            "status": "observed"
+          },
+          "last_run_id": "f1e481f2-30a7-4cf7-be2c-08204d83fb0a",
+          "last_seen": "2026-09-10T09:42:00.000000+00:00",
+          "visibility": "seen",
+          "unavailable_sources": []
+        },
+        {
+          "first_run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+          "first_seen": "2026-09-09T09:42:00.000000+00:00",
+          "history": [
+            "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+            "f1e481f2-30a7-4cf7-be2c-08204d83fb0a"
+          ],
+          "owner_claims": [
+            {
+              "owner": "Finance",
+              "run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+              "status": "reported"
+            }
+          ],
+          "identity_resolution": "legacy_product_aggregate",
+          "record": {
+            "attributes": {},
+            "category": "Data",
+            "confidence": 90,
+            "evidence": [
+              {
+                "confidence": 90,
+                "id": "demo-endpoint-powerbi",
+                "locator": "SAMPLE · powerbi",
+                "observed_at": "2026-09-10T09:42:00Z",
+                "source": "endpoint",
+                "status": "observed",
+                "summary": "Sample endpoint installation record for Power BI Desktop. No reports or datasets were read."
+              },
+              {
+                "confidence": 75,
+                "id": "demo-inventory-powerbi-owner",
+                "locator": "SAMPLE · powerbi-owner",
+                "observed_at": "2026-09-10T09:42:00Z",
+                "source": "inventory",
+                "status": "reported",
+                "summary": "Sample owner inventory describes a monthly CSV transfer from Epicor to Power BI. No live data flow was measured."
+              }
+            ],
+            "id": "powerbi",
+            "name": "Power BI",
+            "owner": "Finance",
+            "status": "observed"
+          },
+          "last_run_id": "f1e481f2-30a7-4cf7-be2c-08204d83fb0a",
+          "last_seen": "2026-09-10T09:42:00.000000+00:00",
+          "visibility": "seen",
+          "unavailable_sources": []
+        },
+        {
+          "first_run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+          "first_seen": "2026-09-09T09:42:00.000000+00:00",
+          "history": [
+            "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+            "f1e481f2-30a7-4cf7-be2c-08204d83fb0a"
+          ],
+          "owner_claims": [
+            {
+              "owner": "Operations",
+              "run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+              "status": "reported"
+            }
+          ],
+          "identity_resolution": "legacy_product_aggregate",
+          "record": {
+            "attributes": {},
+            "category": "ERP",
+            "confidence": 90,
+            "evidence": [
+              {
+                "confidence": 90,
+                "id": "demo-endpoint-epicor",
+                "locator": "SAMPLE · epicor",
+                "observed_at": "2026-09-10T09:42:00Z",
+                "source": "endpoint",
+                "status": "observed",
+                "summary": "Sample endpoint inventory contains an Epicor Kinetic client. This is an installation record; active use has not been independently checked."
+              },
+              {
+                "confidence": 75,
+                "id": "demo-inventory-epicor-owner",
+                "locator": "SAMPLE · epicor-owner",
+                "observed_at": "2026-09-10T09:42:00Z",
+                "source": "inventory",
+                "status": "reported",
+                "summary": "Sample owner inventory identifies Epicor as the production planning system. Owner-reported context; not independently verified."
+              }
+            ],
+            "id": "epicor",
+            "name": "Epicor Kinetic",
+            "owner": "Operations",
+            "status": "observed"
+          },
+          "last_run_id": "f1e481f2-30a7-4cf7-be2c-08204d83fb0a",
+          "last_seen": "2026-09-10T09:42:00.000000+00:00",
+          "visibility": "seen",
+          "unavailable_sources": []
+        },
+        {
+          "first_run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+          "first_seen": "2026-09-09T09:42:00.000000+00:00",
+          "history": [
+            "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+            "f1e481f2-30a7-4cf7-be2c-08204d83fb0a"
+          ],
+          "owner_claims": [],
+          "identity_resolution": "legacy_product_aggregate",
+          "record": {
+            "attributes": {},
+            "category": "ERP",
+            "confidence": 75,
+            "evidence": [
+              {
+                "confidence": 75,
+                "id": "demo-inventory-odoo",
+                "locator": "SAMPLE · odoo",
+                "observed_at": "2026-09-10T09:42:00Z",
+                "source": "inventory",
+                "status": "reported",
+                "summary": "Sample owner inventory lists an Odoo pilot with no assigned owner. Confirm whether it is active and what process it supports."
+              }
+            ],
+            "id": "odoo",
+            "name": "Odoo",
+            "owner": "",
+            "status": "reported"
+          },
+          "last_run_id": "f1e481f2-30a7-4cf7-be2c-08204d83fb0a",
+          "last_seen": "2026-09-10T09:42:00.000000+00:00",
+          "visibility": "seen",
+          "unavailable_sources": []
+        },
+        {
+          "first_run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+          "first_seen": "2026-09-09T09:42:00.000000+00:00",
+          "history": [
+            "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+            "f1e481f2-30a7-4cf7-be2c-08204d83fb0a"
+          ],
+          "owner_claims": [
+            {
+              "owner": "IT",
+              "run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+              "status": "reported"
+            }
+          ],
+          "identity_resolution": "legacy_product_aggregate",
+          "record": {
+            "attributes": {},
+            "category": "Email",
+            "confidence": 60,
+            "evidence": [
+              {
+                "confidence": 60,
+                "id": "demo-dns-m365",
+                "locator": "SAMPLE · m365",
+                "observed_at": "2026-09-10T09:42:00Z",
+                "source": "dns",
+                "status": "inferred",
+                "summary": "Sample MX record points to alderforge-example.mail.protection.outlook.com. This suggests Microsoft mail routing; it does not prove active mailboxes."
+              }
+            ],
+            "id": "m365",
+            "name": "Microsoft 365",
+            "owner": "IT",
+            "status": "inferred"
+          },
+          "last_run_id": "f1e481f2-30a7-4cf7-be2c-08204d83fb0a",
+          "last_seen": "2026-09-10T09:42:00.000000+00:00",
+          "visibility": "seen",
+          "unavailable_sources": []
+        },
+        {
+          "first_run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+          "first_seen": "2026-09-09T09:42:00.000000+00:00",
+          "history": [
+            "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+            "f1e481f2-30a7-4cf7-be2c-08204d83fb0a"
+          ],
+          "owner_claims": [
+            {
+              "owner": "Finance",
+              "run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+              "status": "reported"
+            }
+          ],
+          "identity_resolution": "legacy_product_aggregate",
+          "record": {
+            "attributes": {},
+            "category": "Finance",
+            "confidence": 90,
+            "evidence": [
+              {
+                "confidence": 90,
+                "id": "demo-endpoint-quickbooks",
+                "locator": "SAMPLE · quickbooks",
+                "observed_at": "2026-09-10T09:42:00Z",
+                "source": "endpoint",
+                "status": "observed",
+                "summary": "Sample installation inventory includes QuickBooks. Confirm its business purpose and whether it overlaps with ERP finance modules."
+              }
+            ],
+            "id": "quickbooks",
+            "name": "QuickBooks",
+            "owner": "Finance",
+            "status": "observed"
+          },
+          "last_run_id": "f1e481f2-30a7-4cf7-be2c-08204d83fb0a",
+          "last_seen": "2026-09-10T09:42:00.000000+00:00",
+          "visibility": "seen",
+          "unavailable_sources": []
+        },
+        {
+          "first_run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+          "first_seen": "2026-09-09T09:42:00.000000+00:00",
+          "history": [
+            "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+            "f1e481f2-30a7-4cf7-be2c-08204d83fb0a"
+          ],
+          "owner_claims": [
+            {
+              "owner": "People",
+              "run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+              "status": "reported"
+            }
+          ],
+          "identity_resolution": "legacy_product_aggregate",
+          "record": {
+            "attributes": {},
+            "category": "People",
+            "confidence": 75,
+            "evidence": [
+              {
+                "confidence": 75,
+                "id": "demo-inventory-adp",
+                "locator": "SAMPLE · adp",
+                "observed_at": "2026-09-10T09:42:00Z",
+                "source": "inventory",
+                "status": "reported",
+                "summary": "Sample owner-provided inventory lists ADP Workforce Now for payroll and HR."
+              }
+            ],
+            "id": "adp",
+            "name": "ADP Workforce Now",
+            "owner": "People",
+            "status": "reported"
+          },
+          "last_run_id": "f1e481f2-30a7-4cf7-be2c-08204d83fb0a",
+          "last_seen": "2026-09-10T09:42:00.000000+00:00",
+          "visibility": "seen",
+          "unavailable_sources": []
+        },
+        {
+          "first_run_id": "f1e481f2-30a7-4cf7-be2c-08204d83fb0a",
+          "first_seen": "2026-09-10T09:42:00.000000+00:00",
+          "history": [
+            "f1e481f2-30a7-4cf7-be2c-08204d83fb0a"
+          ],
+          "owner_claims": [
+            {
+              "owner": "Luis Ortega · Maintenance",
+              "run_id": "f1e481f2-30a7-4cf7-be2c-08204d83fb0a",
+              "status": "reported"
+            }
+          ],
+          "identity_resolution": "legacy_product_aggregate",
+          "record": {
+            "attributes": {
+              "business_function": "Maintenance"
+            },
+            "category": "Unclassified",
+            "confidence": 75,
+            "evidence": [
+              {
+                "confidence": 75,
+                "id": "fiix-inventory",
+                "locator": "Owner inventory · Fiix",
+                "observed_at": "2026-09-10T09:42:00Z",
+                "source": "inventory",
+                "status": "reported",
+                "summary": "SAMPLE · The maintenance owner lists Fiix CMMS. It is newly disclosed to Glinx; its installation date and active use are unverified."
+              }
+            ],
+            "id": "fiix",
+            "name": "Fiix CMMS",
+            "owner": "Luis Ortega · Maintenance",
+            "status": "reported"
+          },
+          "last_run_id": "f1e481f2-30a7-4cf7-be2c-08204d83fb0a",
+          "last_seen": "2026-09-10T09:42:00.000000+00:00",
+          "visibility": "seen",
+          "unavailable_sources": []
+        },
+        {
+          "first_run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+          "first_seen": "2026-09-09T09:42:00.000000+00:00",
+          "history": [
+            "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+            "f1e481f2-30a7-4cf7-be2c-08204d83fb0a"
+          ],
+          "owner_claims": [],
+          "identity_resolution": "legacy_product_aggregate",
+          "record": {
+            "attributes": {},
+            "category": "Unclassified",
+            "confidence": 75,
+            "evidence": [
+              {
+                "confidence": 75,
+                "id": "demo-inventory-maintenance",
+                "locator": "SAMPLE · maintenance",
+                "observed_at": "2026-09-10T09:42:00Z",
+                "source": "inventory",
+                "status": "reported",
+                "summary": "Sample inventory lists a local maintenance tracker with no business owner or system category."
+              }
+            ],
+            "id": "maintenance",
+            "name": "Maintenance Tracker",
+            "owner": "",
+            "status": "reported"
+          },
+          "last_run_id": "f1e481f2-30a7-4cf7-be2c-08204d83fb0a",
+          "last_seen": "2026-09-10T09:42:00.000000+00:00",
+          "visibility": "seen",
+          "unavailable_sources": []
+        }
+      ],
+      "relationships": [
+        {
+          "first_run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+          "history": [
+            "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+            "f1e481f2-30a7-4cf7-be2c-08204d83fb0a"
+          ],
+          "record": {
+            "evidence": "SAMPLE · Operations owner reports that Epicor uses this SQL Server. The agent has not connected to either application to verify the relationship.",
+            "id": "r-erp-db",
+            "label": "Production database",
+            "source": "epicor",
+            "status": "reported",
+            "target": "sql"
+          },
+          "last_run_id": "f1e481f2-30a7-4cf7-be2c-08204d83fb0a",
+          "visibility": "seen"
+        },
+        {
+          "first_run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+          "history": [
+            "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+            "f1e481f2-30a7-4cf7-be2c-08204d83fb0a"
+          ],
+          "record": {
+            "evidence": "SAMPLE · Finance reports exporting an Epicor CSV monthly into Power BI. The transfer frequency and mechanism remain owner-reported.",
+            "id": "r-erp-bi",
+            "label": "Monthly CSV transfer",
+            "source": "epicor",
+            "status": "reported",
+            "target": "powerbi"
+          },
+          "last_run_id": "f1e481f2-30a7-4cf7-be2c-08204d83fb0a",
+          "visibility": "seen"
+        },
+        {
+          "first_run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+          "history": [
+            "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+            "f1e481f2-30a7-4cf7-be2c-08204d83fb0a"
+          ],
+          "record": {
+            "evidence": "SAMPLE · Finance reports importing payroll journal exports into QuickBooks. No payroll data or integration configuration was accessed.",
+            "id": "r-hr-fin",
+            "label": "Payroll journal export",
+            "source": "adp",
+            "status": "reported",
+            "target": "quickbooks"
+          },
+          "last_run_id": "f1e481f2-30a7-4cf7-be2c-08204d83fb0a",
+          "visibility": "seen"
+        },
+        {
+          "first_run_id": "f1e481f2-30a7-4cf7-be2c-08204d83fb0a",
+          "history": [
+            "f1e481f2-30a7-4cf7-be2c-08204d83fb0a"
+          ],
+          "record": {
+            "evidence": "SAMPLE · Maintenance reports exporting work orders from Fiix to Epicor. No application connection or data transfer was verified.",
+            "id": "r-fiix-epicor",
+            "label": "Maintenance work order export",
+            "source": "fiix",
+            "status": "reported",
+            "target": "epicor"
+          },
+          "last_run_id": "f1e481f2-30a7-4cf7-be2c-08204d83fb0a",
+          "visibility": "seen"
+        }
+      ],
+      "counts": {
+        "remembered": 13,
+        "seen": 13,
+        "unavailable": 0,
+        "not_seen": 0
+      }
+    },
+    {
+      "run_id": "a7a7532c-a636-4ed8-86ac-82f269dd78c0",
+      "systems": [
+        {
+          "first_run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+          "first_seen": "2026-09-09T09:42:00.000000+00:00",
+          "history": [
+            "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+            "f1e481f2-30a7-4cf7-be2c-08204d83fb0a"
+          ],
+          "owner_claims": [
+            {
+              "owner": "Sales",
+              "run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+              "status": "reported"
+            }
+          ],
+          "identity_resolution": "legacy_product_aggregate",
+          "record": {
+            "attributes": {},
+            "category": "CRM",
+            "confidence": 90,
+            "evidence": [
+              {
+                "confidence": 90,
+                "id": "demo-m365-salesforce",
+                "locator": "SAMPLE · salesforce",
+                "observed_at": "2026-09-10T09:42:00Z",
+                "source": "m365",
+                "status": "observed",
+                "summary": "Sample Microsoft Entra enterprise application registration for Salesforce. Registration does not establish active use or a configured SSO connection."
+              }
+            ],
+            "id": "salesforce",
+            "name": "Salesforce",
+            "owner": "Sales",
+            "status": "observed"
+          },
+          "last_run_id": "f1e481f2-30a7-4cf7-be2c-08204d83fb0a",
+          "last_seen": "2026-09-10T09:42:00.000000+00:00",
+          "visibility": "unavailable",
+          "unavailable_sources": [
+            "m365"
+          ]
+        },
+        {
+          "first_run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+          "first_seen": "2026-09-09T09:42:00.000000+00:00",
+          "history": [
+            "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+            "f1e481f2-30a7-4cf7-be2c-08204d83fb0a",
+            "a7a7532c-a636-4ed8-86ac-82f269dd78c0"
+          ],
+          "owner_claims": [
+            {
+              "owner": "Maya Chen · IT",
+              "run_id": "f1e481f2-30a7-4cf7-be2c-08204d83fb0a",
+              "status": "reported"
+            }
+          ],
+          "identity_resolution": "legacy_product_aggregate",
+          "record": {
+            "attributes": {},
+            "category": "Collaboration",
+            "confidence": 90,
+            "evidence": [
+              {
+                "confidence": 90,
+                "id": "demo-endpoint-dropbox",
+                "locator": "SAMPLE · dropbox",
+                "observed_at": "2026-09-11T09:42:00Z",
+                "source": "endpoint",
+                "status": "observed",
+                "summary": "Sample endpoint inventory contains Dropbox. No owner was supplied; an installation alone does not establish unauthorized use."
+              },
+              {
+                "confidence": 75,
+                "id": "dropbox-owner",
+                "locator": "Owner inventory · Dropbox",
+                "observed_at": "2026-09-11T09:42:00Z",
+                "source": "inventory",
+                "status": "reported",
+                "summary": "SAMPLE · Maya Chen is reported as the Dropbox owner by IT. This ownership statement is not independently verified."
+              }
+            ],
+            "id": "dropbox",
+            "name": "Dropbox",
+            "owner": "Maya Chen · IT",
+            "status": "observed"
+          },
+          "last_run_id": "a7a7532c-a636-4ed8-86ac-82f269dd78c0",
+          "last_seen": "2026-09-11T09:42:00.000000+00:00",
+          "visibility": "seen",
+          "unavailable_sources": []
+        },
+        {
+          "first_run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+          "first_seen": "2026-09-09T09:42:00.000000+00:00",
+          "history": [
+            "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+            "f1e481f2-30a7-4cf7-be2c-08204d83fb0a",
+            "a7a7532c-a636-4ed8-86ac-82f269dd78c0"
+          ],
+          "owner_claims": [
+            {
+              "owner": "IT",
+              "run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+              "status": "reported"
+            }
+          ],
+          "identity_resolution": "legacy_product_aggregate",
+          "record": {
+            "attributes": {},
+            "category": "Collaboration",
+            "confidence": 90,
+            "evidence": [
+              {
+                "confidence": 90,
+                "id": "demo-endpoint-teams",
+                "locator": "SAMPLE · teams",
+                "observed_at": "2026-09-11T09:42:00Z",
+                "source": "endpoint",
+                "status": "observed",
+                "summary": "Sample endpoint installation record for Microsoft Teams. No messages, meetings, or user accounts were read."
+              }
+            ],
+            "id": "teams",
+            "name": "Microsoft Teams",
+            "owner": "IT",
+            "status": "observed"
+          },
+          "last_run_id": "a7a7532c-a636-4ed8-86ac-82f269dd78c0",
+          "last_seen": "2026-09-11T09:42:00.000000+00:00",
+          "visibility": "seen",
+          "unavailable_sources": []
+        },
+        {
+          "first_run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+          "first_seen": "2026-09-09T09:42:00.000000+00:00",
+          "history": [
+            "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+            "f1e481f2-30a7-4cf7-be2c-08204d83fb0a"
+          ],
+          "owner_claims": [
+            {
+              "owner": "IT",
+              "run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+              "status": "reported"
+            }
+          ],
+          "identity_resolution": "legacy_product_aggregate",
+          "record": {
+            "attributes": {},
+            "category": "Collaboration",
+            "confidence": 90,
+            "evidence": [
+              {
+                "confidence": 90,
+                "id": "demo-m365-sharepoint",
+                "locator": "SAMPLE · sharepoint",
+                "observed_at": "2026-09-10T09:42:00Z",
+                "source": "m365",
+                "status": "observed",
+                "summary": "Sample enterprise application registration for SharePoint. No site content, documents, or permissions were collected."
+              }
+            ],
+            "id": "sharepoint",
+            "name": "SharePoint",
+            "owner": "IT",
+            "status": "observed"
+          },
+          "last_run_id": "f1e481f2-30a7-4cf7-be2c-08204d83fb0a",
+          "last_seen": "2026-09-10T09:42:00.000000+00:00",
+          "visibility": "unavailable",
+          "unavailable_sources": [
+            "m365"
+          ]
+        },
+        {
+          "first_run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+          "first_seen": "2026-09-09T09:42:00.000000+00:00",
+          "history": [
+            "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+            "f1e481f2-30a7-4cf7-be2c-08204d83fb0a",
+            "a7a7532c-a636-4ed8-86ac-82f269dd78c0"
+          ],
+          "owner_claims": [
+            {
+              "owner": "IT",
+              "run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+              "status": "reported"
+            }
+          ],
+          "identity_resolution": "legacy_product_aggregate",
+          "record": {
+            "attributes": {},
+            "category": "Data",
+            "confidence": 90,
+            "evidence": [
+              {
+                "confidence": 90,
+                "id": "demo-endpoint-sql",
+                "locator": "SAMPLE · sql",
+                "observed_at": "2026-09-11T09:42:00Z",
+                "source": "endpoint",
+                "status": "observed",
+                "summary": "Sample installation record includes Microsoft SQL Server. Databases, tables, credentials, and business records were not examined."
+              }
+            ],
+            "id": "sql",
+            "name": "Microsoft SQL Server",
+            "owner": "IT",
+            "status": "observed"
+          },
+          "last_run_id": "a7a7532c-a636-4ed8-86ac-82f269dd78c0",
+          "last_seen": "2026-09-11T09:42:00.000000+00:00",
+          "visibility": "seen",
+          "unavailable_sources": []
+        },
+        {
+          "first_run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+          "first_seen": "2026-09-09T09:42:00.000000+00:00",
+          "history": [
+            "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+            "f1e481f2-30a7-4cf7-be2c-08204d83fb0a",
+            "a7a7532c-a636-4ed8-86ac-82f269dd78c0"
+          ],
+          "owner_claims": [
+            {
+              "owner": "Finance",
+              "run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+              "status": "reported"
+            }
+          ],
+          "identity_resolution": "legacy_product_aggregate",
+          "record": {
+            "attributes": {},
+            "category": "Data",
+            "confidence": 90,
+            "evidence": [
+              {
+                "confidence": 90,
+                "id": "demo-endpoint-powerbi",
+                "locator": "SAMPLE · powerbi",
+                "observed_at": "2026-09-11T09:42:00Z",
+                "source": "endpoint",
+                "status": "observed",
+                "summary": "Sample endpoint installation record for Power BI Desktop. No reports or datasets were read."
+              },
+              {
+                "confidence": 75,
+                "id": "demo-inventory-powerbi-owner",
+                "locator": "SAMPLE · powerbi-owner",
+                "observed_at": "2026-09-11T09:42:00Z",
+                "source": "inventory",
+                "status": "reported",
+                "summary": "Sample owner inventory describes a monthly CSV transfer from Epicor to Power BI. No live data flow was measured."
+              }
+            ],
+            "id": "powerbi",
+            "name": "Power BI",
+            "owner": "Finance",
+            "status": "observed"
+          },
+          "last_run_id": "a7a7532c-a636-4ed8-86ac-82f269dd78c0",
+          "last_seen": "2026-09-11T09:42:00.000000+00:00",
+          "visibility": "seen",
+          "unavailable_sources": []
+        },
+        {
+          "first_run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+          "first_seen": "2026-09-09T09:42:00.000000+00:00",
+          "history": [
+            "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+            "f1e481f2-30a7-4cf7-be2c-08204d83fb0a",
+            "a7a7532c-a636-4ed8-86ac-82f269dd78c0"
+          ],
+          "owner_claims": [
+            {
+              "owner": "Operations",
+              "run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+              "status": "reported"
+            }
+          ],
+          "identity_resolution": "legacy_product_aggregate",
+          "record": {
+            "attributes": {},
+            "category": "ERP",
+            "confidence": 90,
+            "evidence": [
+              {
+                "confidence": 90,
+                "id": "demo-endpoint-epicor",
+                "locator": "SAMPLE · epicor",
+                "observed_at": "2026-09-11T09:42:00Z",
+                "source": "endpoint",
+                "status": "observed",
+                "summary": "Sample endpoint inventory contains an Epicor Kinetic client. This is an installation record; active use has not been independently checked."
+              },
+              {
+                "confidence": 75,
+                "id": "demo-inventory-epicor-owner",
+                "locator": "SAMPLE · epicor-owner",
+                "observed_at": "2026-09-11T09:42:00Z",
+                "source": "inventory",
+                "status": "reported",
+                "summary": "Sample owner inventory identifies Epicor as the production planning system. Owner-reported context; not independently verified."
+              }
+            ],
+            "id": "epicor",
+            "name": "Epicor Kinetic",
+            "owner": "Operations",
+            "status": "observed"
+          },
+          "last_run_id": "a7a7532c-a636-4ed8-86ac-82f269dd78c0",
+          "last_seen": "2026-09-11T09:42:00.000000+00:00",
+          "visibility": "seen",
+          "unavailable_sources": []
+        },
+        {
+          "first_run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+          "first_seen": "2026-09-09T09:42:00.000000+00:00",
+          "history": [
+            "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+            "f1e481f2-30a7-4cf7-be2c-08204d83fb0a"
+          ],
+          "owner_claims": [],
+          "identity_resolution": "legacy_product_aggregate",
+          "record": {
+            "attributes": {},
+            "category": "ERP",
+            "confidence": 75,
+            "evidence": [
+              {
+                "confidence": 75,
+                "id": "demo-inventory-odoo",
+                "locator": "SAMPLE · odoo",
+                "observed_at": "2026-09-10T09:42:00Z",
+                "source": "inventory",
+                "status": "reported",
+                "summary": "Sample owner inventory lists an Odoo pilot with no assigned owner. Confirm whether it is active and what process it supports."
+              }
+            ],
+            "id": "odoo",
+            "name": "Odoo",
+            "owner": "",
+            "status": "reported"
+          },
+          "last_run_id": "f1e481f2-30a7-4cf7-be2c-08204d83fb0a",
+          "last_seen": "2026-09-10T09:42:00.000000+00:00",
+          "visibility": "not_seen",
+          "unavailable_sources": []
+        },
+        {
+          "first_run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+          "first_seen": "2026-09-09T09:42:00.000000+00:00",
+          "history": [
+            "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+            "f1e481f2-30a7-4cf7-be2c-08204d83fb0a",
+            "a7a7532c-a636-4ed8-86ac-82f269dd78c0"
+          ],
+          "owner_claims": [
+            {
+              "owner": "IT",
+              "run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+              "status": "reported"
+            }
+          ],
+          "identity_resolution": "legacy_product_aggregate",
+          "record": {
+            "attributes": {},
+            "category": "Email",
+            "confidence": 60,
+            "evidence": [
+              {
+                "confidence": 60,
+                "id": "demo-dns-m365",
+                "locator": "SAMPLE · m365",
+                "observed_at": "2026-09-11T09:42:00Z",
+                "source": "dns",
+                "status": "inferred",
+                "summary": "Sample MX record points to alderforge-example.mail.protection.outlook.com. This suggests Microsoft mail routing; it does not prove active mailboxes."
+              }
+            ],
+            "id": "m365",
+            "name": "Microsoft 365",
+            "owner": "IT",
+            "status": "inferred"
+          },
+          "last_run_id": "a7a7532c-a636-4ed8-86ac-82f269dd78c0",
+          "last_seen": "2026-09-11T09:42:00.000000+00:00",
+          "visibility": "seen",
+          "unavailable_sources": []
+        },
+        {
+          "first_run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+          "first_seen": "2026-09-09T09:42:00.000000+00:00",
+          "history": [
+            "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+            "f1e481f2-30a7-4cf7-be2c-08204d83fb0a",
+            "a7a7532c-a636-4ed8-86ac-82f269dd78c0"
+          ],
+          "owner_claims": [
+            {
+              "owner": "Finance",
+              "run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+              "status": "reported"
+            }
+          ],
+          "identity_resolution": "legacy_product_aggregate",
+          "record": {
+            "attributes": {},
+            "category": "Finance",
+            "confidence": 90,
+            "evidence": [
+              {
+                "confidence": 90,
+                "id": "demo-endpoint-quickbooks",
+                "locator": "SAMPLE · quickbooks",
+                "observed_at": "2026-09-11T09:42:00Z",
+                "source": "endpoint",
+                "status": "observed",
+                "summary": "Sample installation inventory includes QuickBooks. Confirm its business purpose and whether it overlaps with ERP finance modules."
+              }
+            ],
+            "id": "quickbooks",
+            "name": "QuickBooks",
+            "owner": "Finance",
+            "status": "observed"
+          },
+          "last_run_id": "a7a7532c-a636-4ed8-86ac-82f269dd78c0",
+          "last_seen": "2026-09-11T09:42:00.000000+00:00",
+          "visibility": "seen",
+          "unavailable_sources": []
+        },
+        {
+          "first_run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+          "first_seen": "2026-09-09T09:42:00.000000+00:00",
+          "history": [
+            "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+            "f1e481f2-30a7-4cf7-be2c-08204d83fb0a",
+            "a7a7532c-a636-4ed8-86ac-82f269dd78c0"
+          ],
+          "owner_claims": [
+            {
+              "owner": "People",
+              "run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+              "status": "reported"
+            }
+          ],
+          "identity_resolution": "legacy_product_aggregate",
+          "record": {
+            "attributes": {},
+            "category": "People",
+            "confidence": 75,
+            "evidence": [
+              {
+                "confidence": 75,
+                "id": "demo-inventory-adp",
+                "locator": "SAMPLE · adp",
+                "observed_at": "2026-09-11T09:42:00Z",
+                "source": "inventory",
+                "status": "reported",
+                "summary": "Sample owner-provided inventory lists ADP Workforce Now for payroll and HR."
+              }
+            ],
+            "id": "adp",
+            "name": "ADP Workforce Now",
+            "owner": "People",
+            "status": "reported"
+          },
+          "last_run_id": "a7a7532c-a636-4ed8-86ac-82f269dd78c0",
+          "last_seen": "2026-09-11T09:42:00.000000+00:00",
+          "visibility": "seen",
+          "unavailable_sources": []
+        },
+        {
+          "first_run_id": "f1e481f2-30a7-4cf7-be2c-08204d83fb0a",
+          "first_seen": "2026-09-10T09:42:00.000000+00:00",
+          "history": [
+            "f1e481f2-30a7-4cf7-be2c-08204d83fb0a",
+            "a7a7532c-a636-4ed8-86ac-82f269dd78c0"
+          ],
+          "owner_claims": [
+            {
+              "owner": "Luis Ortega · Maintenance",
+              "run_id": "f1e481f2-30a7-4cf7-be2c-08204d83fb0a",
+              "status": "reported"
+            }
+          ],
+          "identity_resolution": "legacy_product_aggregate",
+          "record": {
+            "attributes": {
+              "business_function": "Maintenance"
+            },
+            "category": "Unclassified",
+            "confidence": 75,
+            "evidence": [
+              {
+                "confidence": 75,
+                "id": "fiix-inventory",
+                "locator": "Owner inventory · Fiix",
+                "observed_at": "2026-09-11T09:42:00Z",
+                "source": "inventory",
+                "status": "reported",
+                "summary": "SAMPLE · The maintenance owner lists Fiix CMMS. It is newly disclosed to Glinx; its installation date and active use are unverified."
+              }
+            ],
+            "id": "fiix",
+            "name": "Fiix CMMS",
+            "owner": "Luis Ortega · Maintenance",
+            "status": "reported"
+          },
+          "last_run_id": "a7a7532c-a636-4ed8-86ac-82f269dd78c0",
+          "last_seen": "2026-09-11T09:42:00.000000+00:00",
+          "visibility": "seen",
+          "unavailable_sources": []
+        },
+        {
+          "first_run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+          "first_seen": "2026-09-09T09:42:00.000000+00:00",
+          "history": [
+            "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+            "f1e481f2-30a7-4cf7-be2c-08204d83fb0a",
+            "a7a7532c-a636-4ed8-86ac-82f269dd78c0"
+          ],
+          "owner_claims": [],
+          "identity_resolution": "legacy_product_aggregate",
+          "record": {
+            "attributes": {},
+            "category": "Unclassified",
+            "confidence": 75,
+            "evidence": [
+              {
+                "confidence": 75,
+                "id": "demo-inventory-maintenance",
+                "locator": "SAMPLE · maintenance",
+                "observed_at": "2026-09-11T09:42:00Z",
+                "source": "inventory",
+                "status": "reported",
+                "summary": "Sample inventory lists a local maintenance tracker with no business owner or system category."
+              }
+            ],
+            "id": "maintenance",
+            "name": "Maintenance Tracker",
+            "owner": "",
+            "status": "reported"
+          },
+          "last_run_id": "a7a7532c-a636-4ed8-86ac-82f269dd78c0",
+          "last_seen": "2026-09-11T09:42:00.000000+00:00",
+          "visibility": "seen",
+          "unavailable_sources": []
+        }
+      ],
+      "relationships": [
+        {
+          "first_run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+          "history": [
+            "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+            "f1e481f2-30a7-4cf7-be2c-08204d83fb0a",
+            "a7a7532c-a636-4ed8-86ac-82f269dd78c0"
+          ],
+          "record": {
+            "evidence": "SAMPLE · Operations owner reports that Epicor uses this SQL Server. The agent has not connected to either application to verify the relationship.",
+            "id": "r-erp-db",
+            "label": "Production database",
+            "source": "epicor",
+            "status": "reported",
+            "target": "sql"
+          },
+          "last_run_id": "a7a7532c-a636-4ed8-86ac-82f269dd78c0",
+          "visibility": "seen"
+        },
+        {
+          "first_run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+          "history": [
+            "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+            "f1e481f2-30a7-4cf7-be2c-08204d83fb0a",
+            "a7a7532c-a636-4ed8-86ac-82f269dd78c0"
+          ],
+          "record": {
+            "evidence": "SAMPLE · Finance reports exporting an Epicor CSV monthly into Power BI. The transfer frequency and mechanism remain owner-reported.",
+            "id": "r-erp-bi",
+            "label": "Monthly CSV transfer",
+            "source": "epicor",
+            "status": "reported",
+            "target": "powerbi"
+          },
+          "last_run_id": "a7a7532c-a636-4ed8-86ac-82f269dd78c0",
+          "visibility": "seen"
+        },
+        {
+          "first_run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+          "history": [
+            "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+            "f1e481f2-30a7-4cf7-be2c-08204d83fb0a",
+            "a7a7532c-a636-4ed8-86ac-82f269dd78c0"
+          ],
+          "record": {
+            "evidence": "SAMPLE · Finance reports importing payroll journal exports into QuickBooks. No payroll data or integration configuration was accessed.",
+            "id": "r-hr-fin",
+            "label": "Payroll journal export",
+            "source": "adp",
+            "status": "reported",
+            "target": "quickbooks"
+          },
+          "last_run_id": "a7a7532c-a636-4ed8-86ac-82f269dd78c0",
+          "visibility": "seen"
+        },
+        {
+          "first_run_id": "f1e481f2-30a7-4cf7-be2c-08204d83fb0a",
+          "history": [
+            "f1e481f2-30a7-4cf7-be2c-08204d83fb0a",
+            "a7a7532c-a636-4ed8-86ac-82f269dd78c0"
+          ],
+          "record": {
+            "evidence": "SAMPLE · Maintenance reports exporting work orders from Fiix to Epicor. No application connection or data transfer was verified.",
+            "id": "r-fiix-epicor",
+            "label": "Maintenance work order export",
+            "source": "fiix",
+            "status": "reported",
+            "target": "epicor"
+          },
+          "last_run_id": "a7a7532c-a636-4ed8-86ac-82f269dd78c0",
+          "visibility": "seen"
+        }
+      ],
+      "counts": {
+        "remembered": 13,
+        "seen": 10,
+        "unavailable": 2,
+        "not_seen": 1
+      }
+    }
+  ],
+  "comparisons": [
+    {
+      "before_run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+      "after_run_id": "f1e481f2-30a7-4cf7-be2c-08204d83fb0a",
+      "system_changes": [
+        {
+          "id": "dropbox",
+          "name": "Dropbox",
+          "before_run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+          "after_run_id": "f1e481f2-30a7-4cf7-be2c-08204d83fb0a",
+          "fields": [
+            {
+              "field": "owner",
+              "before": "",
+              "after": "Maya Chen · IT"
+            }
+          ],
+          "kind": "changed"
+        },
+        {
+          "id": "fiix",
+          "name": "Fiix CMMS",
+          "before_run_id": null,
+          "after_run_id": "f1e481f2-30a7-4cf7-be2c-08204d83fb0a",
+          "fields": [],
+          "kind": "added"
+        }
+      ],
+      "relationship_changes": [
+        {
+          "id": "r-fiix-epicor",
+          "kind": "added",
+          "before_run_id": null,
+          "after_run_id": "f1e481f2-30a7-4cf7-be2c-08204d83fb0a"
+        }
+      ],
+      "source_changes": []
+    },
+    {
+      "before_run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+      "after_run_id": "a7a7532c-a636-4ed8-86ac-82f269dd78c0",
+      "system_changes": [
+        {
+          "id": "salesforce",
+          "name": "Salesforce",
+          "before_run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+          "after_run_id": "f1e481f2-30a7-4cf7-be2c-08204d83fb0a",
+          "fields": [],
+          "kind": "unavailable"
+        },
+        {
+          "id": "dropbox",
+          "name": "Dropbox",
+          "before_run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+          "after_run_id": "a7a7532c-a636-4ed8-86ac-82f269dd78c0",
+          "fields": [
+            {
+              "field": "owner",
+              "before": "",
+              "after": "Maya Chen · IT"
+            }
+          ],
+          "kind": "changed"
+        },
+        {
+          "id": "sharepoint",
+          "name": "SharePoint",
+          "before_run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+          "after_run_id": "f1e481f2-30a7-4cf7-be2c-08204d83fb0a",
+          "fields": [],
+          "kind": "unavailable"
+        },
+        {
+          "id": "odoo",
+          "name": "Odoo",
+          "before_run_id": "89926b8d-a455-45af-a8a4-d110c2b02b7b",
+          "after_run_id": "f1e481f2-30a7-4cf7-be2c-08204d83fb0a",
+          "fields": [],
+          "kind": "not_seen"
+        },
+        {
+          "id": "fiix",
+          "name": "Fiix CMMS",
+          "before_run_id": null,
+          "after_run_id": "a7a7532c-a636-4ed8-86ac-82f269dd78c0",
+          "fields": [],
+          "kind": "added"
+        }
+      ],
+      "relationship_changes": [
+        {
+          "id": "r-fiix-epicor",
+          "kind": "added",
+          "before_run_id": null,
+          "after_run_id": "a7a7532c-a636-4ed8-86ac-82f269dd78c0"
+        }
+      ],
+      "source_changes": [
+        {
+          "id": "m365",
+          "name": "Microsoft 365 applications",
+          "before": "complete",
+          "after": "error"
+        }
+      ]
+    },
+    {
+      "before_run_id": "f1e481f2-30a7-4cf7-be2c-08204d83fb0a",
+      "after_run_id": "a7a7532c-a636-4ed8-86ac-82f269dd78c0",
+      "system_changes": [
+        {
+          "id": "salesforce",
+          "name": "Salesforce",
+          "before_run_id": "f1e481f2-30a7-4cf7-be2c-08204d83fb0a",
+          "after_run_id": "f1e481f2-30a7-4cf7-be2c-08204d83fb0a",
+          "fields": [],
+          "kind": "unavailable"
+        },
+        {
+          "id": "sharepoint",
+          "name": "SharePoint",
+          "before_run_id": "f1e481f2-30a7-4cf7-be2c-08204d83fb0a",
+          "after_run_id": "f1e481f2-30a7-4cf7-be2c-08204d83fb0a",
+          "fields": [],
+          "kind": "unavailable"
+        },
+        {
+          "id": "odoo",
+          "name": "Odoo",
+          "before_run_id": "f1e481f2-30a7-4cf7-be2c-08204d83fb0a",
+          "after_run_id": "f1e481f2-30a7-4cf7-be2c-08204d83fb0a",
+          "fields": [],
+          "kind": "not_seen"
+        }
+      ],
+      "relationship_changes": [],
+      "source_changes": [
+        {
+          "id": "m365",
+          "name": "Microsoft 365 applications",
+          "before": "complete",
+          "after": "error"
+        }
+      ]
+    }
+  ]
+}

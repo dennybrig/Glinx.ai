@@ -8,6 +8,8 @@ It contains a working local discovery agent and an investor demo. It does not cl
 
 ## Try the investor demo
 
+**Stage 2A is now implemented:** [explore Alder Forge's company memory](https://glinx-discovery.dennybrig.chatgpt.site/memory.html), or see [the local demo and command guide](docs/STAGE-2-DEMO.md). It preserves discovery history, compares snapshots, and distinguishes missing observations from unavailable sources. The hosted history is a fictional read-only export; the Python/SQLite implementation provides real local persistence. The original stage-one demo continues below.
+
 Requires Python 3.10 or newer. The source checkout demo has no third-party runtime dependencies.
 
 ```bash

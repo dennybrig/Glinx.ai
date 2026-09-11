@@ -87,7 +87,7 @@ async function importFile(file){
   if(!file)return;
   try{if(file.size>5_000_000)throw new Error('Reports must be smaller than 5 MB.');const loaded=validateReport(JSON.parse(await file.text()));stopReplay();report=loaded;query='';category=state='all';render();notify(`Loaded ${loaded.systems.length} systems. This report stays in this tab.`);}catch(e){notify(e.message||'Unable to read this report.',true);}finally{$('report-file').value='';}
 }
-document.querySelectorAll('.nav-item').forEach(b=>b.onclick=()=>changeView(b.dataset.view));
+document.querySelectorAll('.nav-item[data-view]').forEach(b=>b.onclick=()=>changeView(b.dataset.view));
 $('load-report').onclick=()=>$('report-file').click();$('report-file').onchange=e=>importFile(e.target.files[0]);
 $('install-agent').onclick=()=>$('install-dialog').showModal();bindClose();
 $('export-report').onclick=()=>{if(!report)return;saveFile('glinx-report.json',JSON.stringify(report,null,2),'application/json');notify('Full report exported.');};

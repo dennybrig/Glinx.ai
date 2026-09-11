@@ -21,7 +21,7 @@ jobs:
       - run: glinx --version
       - name: Verify installed package includes the dashboard
         working-directory: ${{ runner.temp }}
-        run: python -c "from glinx_discovery.server import web_dir; assert (web_dir() / 'demo.json').exists()"
+        run: python -c "from glinx_discovery.server import web_dir; from glinx_company.demo import reports; assert (web_dir() / 'memory.html').exists(); assert len(reports()) == 3"
   dashboard:
     runs-on: ubuntu-latest
     steps:
@@ -29,5 +29,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
       - run: npm run check
       - run: npm test

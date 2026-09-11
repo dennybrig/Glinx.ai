@@ -11,4 +11,9 @@ node_modules/
 scan*.json
 glinx-config.json
 *.sqlite*
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+company-memory*.json
 .DS_Store

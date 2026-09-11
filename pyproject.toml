@@ -13,7 +13,7 @@ dependencies = []
 glinx = "glinx_discovery.cli:main"
 
 [tool.setuptools]
-packages = ["glinx_discovery"]
+packages = ["glinx_discovery", "glinx_company"]
 include-package-data = true
 
 [tool.setuptools.package-data]

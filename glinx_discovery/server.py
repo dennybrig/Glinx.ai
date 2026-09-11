@@ -5,7 +5,7 @@ import urllib.parse
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 
-PUBLIC_FILES = {"index.html", "styles.css", "app.js", "model.js", "demo.json", "favicon.svg"}
+PUBLIC_FILES = {"index.html", "styles.css", "app.js", "model.js", "demo.json", "favicon.svg", "memory.html", "memory.css", "memory.js", "memory-model.js", "memory-demo.json"}
 
 
 def web_dir():
@@ -13,7 +13,7 @@ def web_dir():
     return packaged if (packaged / "index.html").exists() else Path(__file__).parent.parent / "dist"
 
 
-def handler_for(payload, port):
+def handler_for(payload, port, memory_payload=None):
     class Handler(BaseHTTPRequestHandler):
         def do_GET(self):
             if self.headers.get("Host") not in {f"127.0.0.1:{port}", f"localhost:{port}"}:
@@ -22,6 +22,8 @@ def handler_for(payload, port):
             path = urllib.parse.urlsplit(self.path).path.lstrip("/") or "index.html"
             if path == "initial.json":
                 body, mime = json.dumps(payload).encode(), "application/json"
+            elif path == "memory-demo.json" and memory_payload is not None:
+                body, mime = json.dumps(memory_payload).encode(), "application/json"
             elif path in PUBLIC_FILES:
                 body = (web_dir() / path).read_bytes()
                 mime = {".js": "text/javascript", ".svg": "image/svg+xml"}.get(Path(path).suffix) or mimetypes.guess_type(path)[0] or "application/octet-stream"
